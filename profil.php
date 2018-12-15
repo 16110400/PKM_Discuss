@@ -90,39 +90,43 @@
     </div>
   </div>
   <!-- akhir info panel -->
-  
+
   <!-- gallery konten -->
-  
+
   <div class="container-fluid bg-white">
-  <?php  
-    $koneksi = mysqli_connect("localhost","root","","discuss");
-    $q = "SELECT * from video";
-    $query = mysqli_query($koneksi,$q);
-    $i = 0;
-    $konten = '<section class="gallery-block cards-gallery">
-    <div class="container">';
-    while($row = mysqli_fetch_array($query)){
-    ?>
+
     <section class="gallery-block cards-gallery">
       <div class="container">
-        <div class="row">        
+        <div class="row">
+          <?php  
+          $koneksi = mysqli_connect("localhost","root","","discuss");
+          $q = "SELECT * from video";
+          $query = mysqli_query($koneksi,$q);
+          $i = 0;
+          $konten = '<div class="col-md-6 col-lg-6">';
+          while($row = mysqli_fetch_array($query)){
+          ?>
           <div class="col-md-6 col-lg-6">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo "video/".$row['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo "video/".$row['nama_video']; ?>" controls></video>
+              <a class="lightbox" target="_blank" href="<?php echo " video/".$row['nama_video']; ?>">
+                <video class="col-lg-12 pt-2" src="<?php echo " video/".$row['nama_video']; ?>" controls
+                  type="video/mp4"></video>
               </a>
               <div class="card-body">
                 <h6><a href="#">Lorem Ipsum</a></h6>
                 <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
                   urna.</p>
-                <a href=""><input type="submit" value="view"></a>
               </div>
             </div>
           </div>
-        </div>         
+          <?php 
+            }
+          ?>
+        </div>
       </div>
     </section>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run('.cards-gallery', {
@@ -130,9 +134,7 @@
     });
   </script>
   <!-- akhir gallery konten -->
-  <?php 
-    }
-  ?>
+
 
 
 
