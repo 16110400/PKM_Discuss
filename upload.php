@@ -35,39 +35,3 @@
         </div>
     </div>
 </div>
-
-<script>
-        var loadFile = function(event) {
-          var reader = new FileReader();
-          reader.onload = function(){
-            var output = document.getElementById('respond-1');
-            output.src = reader.result;
-          };
-          reader.readAsDataURL(event.target.files[0]);
-        };
-
-        $(document).on("change", ".file_multi_video", function(evt) {
-            var $source = $('#video_here');
-            $source[0].src = URL.createObjectURL(this.files[0]);
-            $source.parent()[0].load();
-        });
-
-        var current = null;
-        function showresponddiv(messagedivid){
-        var id = messagedivid.replace("message-", "respond-"),
-        div = document.getElementById(id);
-
-        // hide previous one
-        if(current && current != div) {
-        current.style.display =  'none';
-        }   
-
-        if (div.style.display=="none"){
-        div.style.display="inline";
-        current = div;
-        } 
-        else {
-        div.style.display="none";
-        }
-    }
-      </script>
