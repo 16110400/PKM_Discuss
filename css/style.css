@@ -5,6 +5,10 @@
 .modal-background {
   background-color: #eee;
 }
+.center {
+ margin-inline-start: auto;
+  margin-inline-end: auto;
+=======
 
 /* profil */
 .collapse img {
@@ -98,4 +102,5 @@
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
   }
+>>>>>>> 50b028be434d249216b527a3c1d694f9849bfe26
 }

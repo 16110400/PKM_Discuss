@@ -88,6 +88,7 @@
                             </a>
                           <ul class="dropdown-menu">
                             <li><a data-toggle="modal" href="#modalMasuk">Masuk</a></li>
+                            <li><a data-toggle="modal" href="#modalDaftar">Daftar</a></li>
                             <li><a data-toggle="modal" href="#modalDaftar">Another action</a></li>
                           </ul>
                     </li>
@@ -216,7 +217,7 @@
     <div class="modal-content">
       <div class="modal-body">
 
-        <!-- Material form register -->
+        <!-- login -->
         <form>
             <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
@@ -240,9 +241,7 @@
                 <a href=""><button class="btn-primary">Masuk</button></a>
             </div>
         </form>
-        <!-- Material form register -->
-
-    </div>
+      </div>
     </div>
     <!-- Card body -->
 
@@ -252,7 +251,54 @@
 </div>
 
 <!--End Popup Masuk-->
+<div class="container my-4">
+  <div class="row">
+    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
+      <div class="modal-dialog modal-background">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Material form register -->
+            <form>
+                <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button></p>
 
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="materialFormCardEmailEx" class="form-control" required>
+                    <label for="materialFormCardEmailEx" class="font-weight-light">Username</label>
+                </div>
+                
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="materialFormCardEmailEx" class="form-control" required>
+                    <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
+                </div>
+
+                <!-- Material input email -->
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="materialFormCardEmailEx" class="form-control" required>
+                    <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="materialFormCardPasswordEx" class="form-control" required>
+                    <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                </div>
+
+                <div class="text-center py-4 mt-3">
+                    <a href=""><button class="btn-primary">Daftar</button></a>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
