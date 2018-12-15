@@ -57,7 +57,7 @@ body{
   color: #fff;
   background-color: #007bff;
   border-color: #ddd;
-=======
+}
 .copyright {
   text-align: center;
 }
@@ -65,10 +65,6 @@ body{
 .modal-background {
   background-color: #eee;
 }
-.center {
- margin-inline-start: auto;
-  margin-inline-end: auto;
-=======
 
 /* profil */
 .collapse img {
@@ -100,21 +96,19 @@ body{
 
 /* info panel */
 .info-panel {
-  margin-top: -80px;
+  margin-top: -100px;
 }
 
 /* konten */
-.konten {
-  height: 200px;
-}
+
 
 .gallery-block {
   padding-bottom: 60px;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .gallery-block .heading {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
@@ -164,6 +158,4 @@ body{
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
   }
->>>>>>> 50b028be434d249216b527a3c1d694f9849bfe26
->>>>>>> 8f8b3ad022e5bee5e01cc59577ec06817f63ebe6
 }
