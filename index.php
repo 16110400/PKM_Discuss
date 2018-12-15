@@ -39,7 +39,7 @@ $hal="";
           <a href="index.php?hal=upload" class="navbtnlink"><i class="material-icons material-icons-i">photo_camera
         </i></a></div>
         <div class="col navbtn">
-          <a href="#" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
+          <a href="index.php?hal=profile" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
         </i></a></div>
         <div class="col navbtn">
           <a href="#" class="navbtnlink"><i class="material-icons material-icons-i">build
@@ -68,6 +68,9 @@ $hal="";
                     break;
                     case "upload":
                     require_once('upload.php');
+                    break;
+                    case "profile":
+                    require_once('profil.php');
                     break;
                     default:
                     require_once('home.php');
