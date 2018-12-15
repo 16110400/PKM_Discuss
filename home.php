@@ -1,40 +1,82 @@
-<div class="main">
-        <div class="container" style="padding-top:50px;padding-bottom: 50px">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card col-md-3">
-               <img class="img-thumbnail" src="images/vid.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5><b>Judul</b></h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Akun</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card col-md-3">
-               <img class="img-thumbnail" src="images/vid.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5><b>Judul</b></h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Akun</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card col-md-3">
-               <img class="img-thumbnail" src="images/vid.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5><b>Judul</b></h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Akun</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card col-md-3">
-               <img class="img-thumbnail" src="images/vid.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5><b>Judul</b></h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Akun</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-            </div>    
+
+    <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
-    </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 mb-2">
+       <div class="card">
+        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+           <h6 class="card-title">Nama</h6>
+           <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+</div>
