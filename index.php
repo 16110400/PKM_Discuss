@@ -39,7 +39,7 @@ $hal="";
           <a href="index.php?hal=upload" class="navbtnlink"><i class="material-icons material-icons-i">photo_camera
         </i></a></div>
         <div class="col navbtn">
-          <a href="#" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
+          <a href="index.php?hal=profile" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
         </i></a></div>
         <div class="col navbtn">
           <a href="#" class="navbtnlink"><i class="material-icons material-icons-i">build
@@ -69,6 +69,9 @@ $hal="";
                     case "upload":
                     require_once('upload.php');
                     break;
+                    case "profile":
+                    require_once('profil.php');
+                    break;
                     default:
                     require_once('home.php');
                     break;
@@ -82,6 +85,7 @@ $hal="";
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -120,6 +124,10 @@ $hal="";
         }
     }
       </script>
+<<<<<<< HEAD
   </body>
+=======
+</body>
+>>>>>>> e05bcc7a365890a19ce61d13b03f08f360beca71
 	
 </html>
