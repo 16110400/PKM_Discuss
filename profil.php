@@ -1,34 +1,11 @@
 <?php 
-  include "koneksi.php";
+include "koneksi.php";
 ?>
-
-
-<!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
-
-  <title>Profil</title>
-</head>
-
-<body>
-
+<div class="col-md-12">
   <!-- jumbotron -->
-  <div class="jumbotron jumbotron-fluid jb1 shadow">
+  <div class="jumbotron jumbotron jb1 shadow">
     <div class="container text-center">
-      <img src="images/foto_profil.png" width="100%" class="mt-4 rounded-circle" alt="">
+      <img src="images/foto_profil.png" class="mt-1 rounded-circle" alt="">
     </div>
   </div>
   <!-- akhir jumbotron -->
@@ -64,12 +41,12 @@
       <div class="container">
         <div class="row">
           <?php
-        for($i=1; $i<=4;$i++){
-          for($j=1; $j<=2;$j++){?>
+          for ($i = 1; $i <= 4; $i++) {
+            for ($j = 1; $j <= 2; $j++) { ?>
           <div class="col-md-6">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/".$row['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/".$row['nama_video']; ?>" controls></video>
+              <a class="lightbox" target="_blank" href="<?php echo " video/" . $row['nama_video']; ?>">
+                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $row['nama_video']; ?>" controls></video>
               </a>
               <div class="card-body">
                 <h6><a href="#">Lorem Ipsum</a></h6>
@@ -79,14 +56,11 @@
               </div>
             </div>
           </div>
-          <?php  }
-      }?>
+          <?php 
+        }
+      } ?>
         </div>
       </div>
     </section>
   </div>
-
-
-</body>
-
-</html>
+</div>

@@ -1,5 +1,5 @@
 <?php
-$hal="";
+$hal = "";
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,15 +20,11 @@ $hal="";
 
 <body>
   <!-- Start Header -->
-  <nav class="navbar navbar-light" style="background-color: #009E9A;">
+  <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
     <form class="form-inline">
       <button class="btn btn-outline-custom m-1" type="button">
-        <?php if(isset($_SESSION['id'])){ ?>
-        <a class="link" href="logout.php" style="text-decoration:none">logout</a>
-        <?php }else{ ?>
         <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
-        <?php } ?>
       </button>
     </form>
   </nav>
@@ -59,33 +55,33 @@ $hal="";
 
   <!-- Start Content -->
   <div class="container">
-    <div class="row mt-3">
+    <div class="row">
       <?php
-            $default="home.php";
-            @$hal=$_GET['hal'];
+      $default = "home.php";
+      @$hal = $_GET['hal'];
 
-            if (!$hal) {
-                require_once "$default";
-            }else{
-                switch($hal){
-                    case "home":
-                    require_once('home.php');
-                    break;
-                    case "list":
-                    require_once('list.php');
-                    break;
-                    case "upload":
-                    require_once('upload.php');
-                    break;
-                    case "profile":
-                    require_once('profil.php');
-                    break;
-                    default:
-                    require_once('home.php');
-                    break;
-                }
-            }
-        ?>
+      if (!$hal) {
+        require_once "$default";
+      } else {
+        switch ($hal) {
+          case "home":
+            require_once('home.php');
+            break;
+          case "list":
+            require_once('list.php');
+            break;
+          case "upload":
+            require_once('upload.php');
+            break;
+          case "profile":
+            require_once('profil.php');
+            break;
+          default:
+            require_once('home.php');
+            break;
+        }
+      }
+      ?>
     </div>
   </div>
   <!-- End Content -->
