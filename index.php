@@ -21,8 +21,7 @@ $hal="";
      <a class="navbar-brand">Discuss ID</a>
       <form class="form-inline">
         <button class="btn btn-outline-custom m-1" type="button">login</button>
-        <button class="btn btn-outline-custom m-1" type="button">Register</button>
-      </form>
+        </form>
     </nav>
     <!-- End Header -->
 
