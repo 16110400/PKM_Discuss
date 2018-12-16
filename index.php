@@ -58,7 +58,7 @@ $hal = "";
   <!-- End Nav -->
 
   <!-- Start Content -->
-  <div class="container my-3">
+  <div class="container">
     <div class="row">
       <?php
       $default = "home.php";
