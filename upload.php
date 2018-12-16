@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require_once "koneksi.php";
+
+?>
 <div class="col-md-12 mt-4">
 <div class="col-md-12 mb-4" style="text-align: center;"><h4>Unggah sebuah Gambar atau Video</h4></div>
     <div class="row">
