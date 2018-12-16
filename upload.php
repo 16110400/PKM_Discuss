@@ -1,4 +1,4 @@
-<div class="col-md-12 mt-2">
+<div class="col-md-12 mt-4">
 <div class="col-md-12 mb-4" style="text-align: center;"><h4>Unggah sebuah Gambar atau Video</h4></div>
     <div class="row">
         <div class="col-md-6 col-sm-6">
