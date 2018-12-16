@@ -173,8 +173,7 @@ video.col-lg-12.pt-2 {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
   }
-<<<<<<< HEAD
-  
+
 }
 
 .closemdLogin {
@@ -192,7 +191,6 @@ video.col-lg-12.pt-2 {
   cursor: pointer;
   opacity: 0.5;
   filter: alpha(opacity=50);
-=======
 
 }
 
@@ -200,5 +198,4 @@ video.col-lg-12.pt-2 {
 .edit {
   margin-top: -80px;
 
->>>>>>> fdf78cbed08426790966edb0fe60b9783b56bb7f
 }

@@ -14,6 +14,8 @@ $hal = "";
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
 
   <title>Discuss Indonesia</title>
 </head>
@@ -21,10 +23,13 @@ $hal = "";
 <body>
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
-    <a class="navbar-brand">Discuss ID</a>
+      <a class="navbar-brand">Discuss ID</a>
     <form class="form-inline">
-      <button class="btn btn-outline-custom m-1" type="button">
-        <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
+      <button class="btn btn-dark m-1">
+        <a class="link text-white px-2" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">Login</a>
+      </button>
+      <button class="btn btn-dark m-1">
+        <a class="link text-white px-2" data-toggle="modal" href="#modalDaftar" style="text-decoration:none">Registrasi</a>
       </button>
     </form>
   </nav>
@@ -33,9 +38,8 @@ $hal = "";
   <!-- Start Nav -->
   <div class="container-fluid startnav">
     <div class="row">
-      <div class="col navbtn">
-        <a href="index.php?hal=home" class="navbtnlink"><i class="material-icons material-icons-i">home
-          </i></a></div>
+      <div class="col navbtn"><a href="index.php?hal=home" class="navbtnlink">
+          <i class="material-icons material-icons-i">home</i></a></div>
       <div class="col navbtn">
         <a href="index.php?hal=list" class="navbtnlink"><i class="material-icons material-icons-i">view_module
           </i></a></div>
@@ -54,7 +58,7 @@ $hal = "";
   <!-- End Nav -->
 
   <!-- Start Content -->
-  <div class="container">
+  <div class="container my-3">
     <div class="row">
       <?php
       $default = "home.php";
@@ -100,9 +104,9 @@ $hal = "";
 
         <!-- Material form register -->
         <form>
-            <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+            <p class="h4 text-left py-4"> <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
+                </button></button>
 
             <!-- Material input email -->
             <div class="md-form">
@@ -119,8 +123,9 @@ $hal = "";
             </div>
 
             <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Masuk</button></a>
+                <button class="btn-primary"><a class="text-white" href="">Login</a></button>
                 <p>
+                <br/>
                   Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
             </div>
         </form>
