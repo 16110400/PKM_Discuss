@@ -3,14 +3,14 @@
     <div class="row">
         <div class="col-md-6 col-sm-6">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <label for="message-1">
                         <i class="material-icons material-icons-u">recent_actors
                         </i>
                         <input type="file" accept="image/*" name="" id="message-1" style="display: none" onclick="showresponddiv(this.id)" onchange="loadFile(event)">
                     </label>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <label for="message-2">
                       <i class="material-icons material-icons-u">videocam
                       </i>
@@ -32,6 +32,7 @@
                <label for="exampleFormControlTextarea1"><h5>Deskripsi</h5></label>
                 <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="9"></textarea>
             </div>
-        </div>
-    </div>
+            </div>
+        </div>    
+        
 </div>

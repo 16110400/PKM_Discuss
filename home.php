@@ -1,3 +1,4 @@
+
     <div class="col-md-3 col-sm-12 mb-2">
        <div class="card">
         <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
@@ -78,4 +79,4 @@
            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
-      </div>
+</div>
