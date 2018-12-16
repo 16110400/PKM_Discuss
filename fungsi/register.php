@@ -6,24 +6,29 @@ require_once "../koneksi.php";
 if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
-    $nama = $_POST['nama'];
+    $name = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $no_telepon = $_POST['no_hp'];
+    $jenis_kelamin= $_POST['jk'];
     $email = $_POST['email'];
-    $jk = $_POST['jk'];
-    $alamat= $_POST['alamat'];
-    $no_hp = $_POST['no_hp'];
-    $passowrd = $_POST['password'];
+    $password = md5($_POST['password']);
 
     // buat query
-    $sql = "INSERT INTO user (nama,email, password,alamat, jenis_kelamin, password, telepon) VALUE ('$nama', '$email', '$alamat', '$jk', '$no_hp','$password')";
-    $query = mysqli_query($koneksi, $sql);
+    $register = "INSERT INTO user (nama,alamat,no_telepon, jenis_kelamin,email, password) VALUES ('$name', '$alamat', '$no_telepon', '$jenis_kelamin', '$email','$password')";
+    $query = mysqli_query($koneksi, $register);
 
     // apakah query simpan berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        header('Location: ../index.php');
+        echo "<script>
+                    alert('Anda Sudah Melakukan Pendaftaran')
+                    window.location='../index.php'
+                </script>";
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: ../index.php?status=gagal');
+        echo "<script>alert('Gagal Mendaftar')
+            window.location='../index.php'
+        </script>";
     }
 
 
