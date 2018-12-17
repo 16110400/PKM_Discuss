@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Des 2018 pada 14.42
+-- Waktu pembuatan: 17 Des 2018 pada 15.10
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.0
 
@@ -41,21 +41,23 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `user` (
-  `id_user` int(25) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(25) NOT NULL,
-  `jenis_kelamin` varchar(10) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `alamat` text NOT NULL,
-  `telepon` varchar(13) NOT NULL
+  `no_telepon` varchar(100) NOT NULL,
+  `jenis_kelamin` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `jenis_kelamin`, `alamat`, `telepon`) VALUES
-(1, 'Haris', 'silah766@gmail.com', '123456', 'Laki', 'jl.mangga', '082384383680');
+INSERT INTO `user` (`id_user`, `nama`, `alamat`, `no_telepon`, `jenis_kelamin`, `email`, `password`) VALUES
+(1, 'Haris Angriawan', 'Jl. Maguwo', '082384383680', 'Laki-Laki', 'silah766@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(6, 'Dikot Syarif', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(7, 'DIKOT', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
@@ -114,23 +116,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `video`
 --
 ALTER TABLE `video`
   MODIFY `id_video` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `comment`
---
-ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

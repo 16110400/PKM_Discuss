@@ -53,205 +53,226 @@
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
-      
-    <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+
+      <div class="col-md-3 col-sm-12 mb-2">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
-</div>
+      </div>
     </div>
   </div>
   <!-- End Content -->
 
   <!--Popup Masuk-->
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form register -->
+              <form action="fungsi/login_user.php" method="POST" ectype="multipart/form-part">
+                <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
+                  </button></p>
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">   
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" id="materialFormCardEmailEx" class="form-control" name="email">
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" id="materialFormCardPasswordEx" class="form-control" name="password">
+                </div>
+
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
+              </form>
+              <!-- Material form register -->
+
             </div>
+          </div>
+          <!-- Card body -->
 
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">    
-            </div>
-
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Masuk</button></a>
-                <p>
-                  Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- Card body -->
+  </div>
 
-</div>
-</div>
-</div>
-</div>
+  <!--End Popup Masuk-->
 
-<!--End Popup Masuk-->
+  <!--Popup Daftar-->
 
-<!--Popup Daftar-->
-
-<div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form register -->
+              <form action="fungsi/register.php" method="POST" enctype="multipart/form-form">
+                <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
-            
-            <!-- Material input nama lengkap -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
-                <input type="email" id="materialFormCardNamaEx" class="form-control">
-            </div>
+                  </button></p>
 
-            <!-- Material input username -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Username</label>
-                <input type="email" id="materialFormCardUsenameEx" class="form-control">
+                <!-- Material input nama lengkap -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
+                  <input type="text" class="form-control" name="nama" id="materialFormCardNamaEx" class="form-control">
+                </div>
+                <!-- Material input alamat -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="exampleFormControlTextarea1">Alamat</label>
+                  <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+                <!-- Material input telepon -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">No Handphone</label>
+                  <input type="text" name="no_hp" id="materialFormCardPasswordEx" class="form-control">
+                </div>
+                <!-- Material input jenis-kelamin -->
+                <div class="md-form mt-2 mb-2">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Jenis Kelamin</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Laki-Laki" checked>Laki-Laki</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Perempuan">Perempuan</label>
+                </div>
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
+                </div>
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" name="password" id="materialFormCardPasswordEx" class="form-control">
+                </div>
+                <div class="text-center py-2 mt-1">
+                  <button name="daftar" class="btn btn-dark">Daftar</button>
+                </div>
             </div>
+            </form>
+            <!-- Material form register -->
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">
-            </div>
+          </div>
+        </div>
+        <!-- Card body -->
 
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">
-            </div>
-
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Daftar</button></a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+      </div>
     </div>
-    </div>
-    <!-- Card body -->
+  </div>
+  </div>
 
-</div>
-</div>
-</div>
-</div>
-
-<!--End Popup Daftar-->
+  <!--End Popup Daftar-->
 
 
 
@@ -271,7 +292,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
- 
+
 
   <script>
     var loadFile = function (event) {
