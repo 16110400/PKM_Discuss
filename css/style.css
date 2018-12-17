@@ -29,13 +29,15 @@ body {
   height: 100px;
 }
 
-.navbtn:active {
-  background-color: #222;
+.activenavbtn {
+  background-color: #02B1A6;
+
 }
 
 .navbtn:hover,
 .navbtn:focus {
-  background-color: #222;
+  background-color: #00dddddd;
+  opacity: 0.9;
 }
 
 .navbtnlink {

@@ -30,7 +30,7 @@
   <!-- Start Nav -->
   <div class="container-fluid startnav">
     <div class="row">
-      <div class="col navbtn activenavbtn">
+      <div class="col navbtn">
         <a href="index.php" class="navbtnlink"><i class="material-icons material-icons-i">home
           </i></a></div>
       <div class="col navbtn">
@@ -42,7 +42,7 @@
       <div class="col navbtn">
         <a href="profile.php" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
           </i></a></div>
-      <div class="col navbtn">
+      <div class="col navbtn activenavbtn">
         <a href="setting.php" class="navbtnlink"><i class="material-icons material-icons-i">build
           </i></a></div>
     </div>
@@ -53,88 +53,9 @@
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
-      
-    <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-       <div class="card">
-        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-           <h6 class="card-title">Nama</h6>
-           <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-</div>
+      
+
     </div>
   </div>
   <!-- End Content -->
@@ -271,43 +192,6 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
- 
-
-  <script>
-    var loadFile = function (event) {
-      var reader = new FileReader();
-      reader.onload = function () {
-        var output = document.getElementById('respond-1');
-        output.src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    };
-
-    $(document).on("change", ".file_multi_video", function (evt) {
-      var $source = $('#video_here');
-      $source[0].src = URL.createObjectURL(this.files[0]);
-      $source.parent()[0].load();
-    });
-
-    var current = null;
-
-    function showresponddiv(messagedivid) {
-      var id = messagedivid.replace("message-", "respond-"),
-        div = document.getElementById(id);
-
-      // hide previous one
-      if (current && current != div) {
-        current.style.display = 'none';
-      }
-
-      if (div.style.display == "none") {
-        div.style.display = "inline";
-        current = div;
-      } else {
-        div.style.display = "none";
-      }
-    }
-  </script>
 </body>
 
 </html>
