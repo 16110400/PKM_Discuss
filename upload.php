@@ -62,11 +62,11 @@ $type = "";
 <div class="col-md-12 mb-4" style="text-align: center;"><h4>Unggah sebuah Gambar atau Video</h4></div>
     <div class="row" style="background-color: #fff;height: 75px;">
         <div class="col-md-6">
-          <a href="exupload.php?type=pictures" class="navbtnlink"><i class="material-icons material-icons-u">recent_actors
+          <a href="upload.php?type=pictures" class="navbtnlink"><i class="material-icons material-icons-u">recent_actors
           </i></a>
         </div>
         <div class="col-md-6">
-        <a href="exupload.php?type=videos" class="navbtnlink"><i class="material-icons material-icons-u">videocam
+        <a href="upload.php?type=videos" class="navbtnlink"><i class="material-icons material-icons-u">videocam
         </i></a>
         </div>        
     </div>
