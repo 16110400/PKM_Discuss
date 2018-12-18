@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
-  <?php
-  include "koneksi.php";
 
+<?php
+  include "koneksi.php";
+  session_start();
   $query = mysqli_query($koneksi, "select*from video");
   ?>
 
@@ -24,9 +25,22 @@
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
-    <form class="form-inline">
-        <a class="btn btn-dark" data-toggle="modal" href="#modalMasuk" role="button">login</a>
-    </form>
+    
+    <!-- <li class="form-inline">
+      <a class="btn btn-dark" data-toggle="modal" href="#modalMasuk" role="button">login</a>
+    </li> -->
+    <?php
+    if(empty($_SESSION['email']))
+{
+    echo '<li><a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a></li>';
+}else
+{
+    echo '<li><a href="logout.php">Logout</a></li>';
+}
+    
+?>
+
+
   </nav>
   <!-- End Header -->
 
@@ -61,12 +75,12 @@
         for ($j = 1; $j <= 4; $j++) {
           while ($all_video = mysqli_fetch_array($query)) {
             ?>
-      
+
       <div class="col-md-3 col-sm-12 mb-2">
         <div class="card">
-         <video width="253" height="150" controls>
-           <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
-         </video>
+          <video width="253" height="150" controls>
+            <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
+          </video>
           <div class="card-body">
             <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
               width="70">
@@ -75,12 +89,12 @@
           </div>
         </div>
       </div>
-    <?php
+      <?php
 
   }
 }
 } ?>
-     
+
     </div>
   </div>
   <!-- End Content -->
@@ -106,31 +120,30 @@
 
                 <!-- Material input email -->
                 <div class="md-form">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                    <input type="email" class="form-control" name="email" required>
-                  </div>
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
 
-                  <!-- Material input password -->
-                  <div class="md-form">
-                    <i class="fa fa-lock prefix grey-text"></i>
-                    <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                    <input type="password" class="form-control" name="password" required>
-                  </div>
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" class="form-control" name="password" required>
+                </div>
 
-                  <div class="text-center py-4 mt-3">
-                    <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
-                    <p>
-                      <br />
-                      Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-                  </div>
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
               </form>
               <!-- Material form register -->
 
             </div>
           </div>
           <!-- Card body -->
-
         </div>
       </div>
     </div>
@@ -157,8 +170,8 @@
                     <span aria-hidden="true">×</span>
                   </button></p>
 
-                 <!-- Material input nama lengkap -->
-                 <div class="md-form">
+                <!-- Material input nama lengkap -->
+                <div class="md-form">
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
                   <input type="text" class="form-control" name="nama" class="form-control" required>
@@ -187,7 +200,7 @@
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
                   <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
-                </div>                
+                </div>
                 <!-- Material input password -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
@@ -200,13 +213,13 @@
               </form>
               <!-- Material form register -->
 
+            </div>
           </div>
-        </div>
-        <!-- Card body -->
+          <!-- Card body -->
 
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!--End Popup Daftar-->
