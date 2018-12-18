@@ -1,10 +1,8 @@
 <?php
  
 error_reporting(1);
- 
-$con=mysql_connect("localhost","root","");
- 
-mysql_select_db("video",$con);
+
+require_once ('koneksi.php');
  
 extract($_POST);
  
@@ -27,7 +25,7 @@ else
  
 $video_path=$_FILES['fileToUpload']['name'];
  
-mysql_query("insert into videos(video_name,deskripsi_video) values('$video_path','$deskripsi')");
+mysqli_query("insert into video(nama_video,deskripsi_video) values('$video_path','$deskripsi')");
  
 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
  

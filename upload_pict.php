@@ -2,13 +2,13 @@
  
 error_reporting(1);
  
-$con=mysql_connect("localhost","root","");
+require_once ('koneksi.php');
  
-mysql_select_db("video",$con);
+mysql_select_db("discuss",$koneksi);
  
 extract($_POST);
  
-$target_dir = "image_post/";
+$target_dir = "image/";
 $deskripsi = $_POST['des'];
  
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -27,7 +27,7 @@ else
  
 $video_path=$_FILES['fileToUpload']['name'];
  
-mysql_query("insert into videos(video_name,deskripsi_video) values('$video_path','$deskripsi')");
+mysql_query("insert into video(video_name,deskripsi_video) values('$video_path','$deskripsi')");
  
 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
  
