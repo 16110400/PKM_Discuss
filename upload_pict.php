@@ -2,7 +2,7 @@
  
 error_reporting(1);
  
-require_once ('koneksi.php');
+require_once "koneksi.php";
  
 mysql_select_db("discuss",$koneksi);
  
@@ -25,13 +25,15 @@ if($imageFileType != "JPEG" && $imageFileType != "JPG" && $imageFileType != "GIF
 else
 {
  
-$video_path=$_FILES['fileToUpload']['name'];
+$image_path=$_FILES['fileToUpload']['name'];
  
-mysql_query("insert into video(video_name,deskripsi_video) values('$video_path','$deskripsi')");
+mysqli_query($koneksi,"insert into image(nama_image,deskripsi_image) values('$image_path','$deskripsi')");
  
 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
  
-echo "uploaded ";
+echo "<script>alert('Berhasil Diunggah')
+window.location='index.php'
+</script>";
  
 }
  

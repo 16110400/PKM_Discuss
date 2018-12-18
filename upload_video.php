@@ -2,7 +2,7 @@
  
 error_reporting(1);
 
-require_once ('koneksi.php');
+require_once "koneksi.php";
  
 extract($_POST);
  
@@ -25,11 +25,13 @@ else
  
 $video_path=$_FILES['fileToUpload']['name'];
  
-mysqli_query("insert into video(nama_video,deskripsi_video) values('$video_path','$deskripsi')");
+mysqli_query($koneksi,"insert into video(nama_video,deskripsi_video) values('$video_path','$deskripsi')");
  
 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
  
-echo "uploaded ";
+echo "<script>alert('Berhasil Diunggah')
+window.location='index.php'
+</script>";
  
 }
  
