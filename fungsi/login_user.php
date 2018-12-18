@@ -19,9 +19,11 @@ $cek = mysqli_num_rows($data);
 if($cek > 0){
 	$_SESSION['email'] = $email;
 	$_SESSION['status'] = "login";
-	header("location:../index.php?email=$email");
+	echo "<script>alert('Anda Telah berhasil login')
+            window.location='../index.php?=$email'
+        </script>";
 }else{
-   echo "<script>alert('login gagal')
+   echo "<script>alert('Login Gagal, Email atau Password Salah')
             window.location='../index.php'
         </script>";
 }

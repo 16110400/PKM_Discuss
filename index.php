@@ -106,24 +106,24 @@
 
                 <!-- Material input email -->
                 <div class="md-form">
-                  <i class="fa fa-envelope prefix grey-text"></i>
-                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                  <input type="email" id="materialFormCardEmailEx" class="form-control" name="email" required>
-                </div>
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                  </div>
 
-                <!-- Material input password -->
-                <div class="md-form">
-                  <i class="fa fa-lock prefix grey-text"></i>
-                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                  <input type="password" id="materialFormCardPasswordEx" class="form-control" name="password" required>
-                </div>
+                  <!-- Material input password -->
+                  <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                    <input type="password" class="form-control" name="password" required>
+                  </div>
 
-                <div class="text-center py-4 mt-3">
-                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
-                  <p>
-                    <br />
-                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-                </div>
+                  <div class="text-center py-4 mt-3">
+                    <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                    <p>
+                      <br />
+                      Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                  </div>
               </form>
               <!-- Material form register -->
 
@@ -157,23 +157,23 @@
                     <span aria-hidden="true">×</span>
                   </button></p>
 
-                <!-- Material input nama lengkap -->
-                <div class="md-form">
+                 <!-- Material input nama lengkap -->
+                 <div class="md-form">
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
-                  <input type="text" class="form-control" name="nama" id="materialFormCardNamaEx" class="form-control" required>
+                  <input type="text" class="form-control" name="nama" class="form-control" required>
                 </div>
                 <!-- Material input alamat -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="exampleFormControlTextarea1">Alamat</label>
-                  <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" rows="1" required></textarea>
+                  <textarea class="form-control" name="alamat" rows="1" required></textarea>
                 </div>
                 <!-- Material input telepon -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="materialFormCardPasswordEx" class="font-weight-light">No Handphone</label>
-                  <input type="tel" name="no_hp" id="materialFormCardPasswordEx" class="form-control" required>
+                  <input type="text" name="no_hp" class="form-control" required>
                 </div>
                 <!-- Material input jenis-kelamin -->
                 <div class="md-form mt-2 mb-2">
@@ -187,19 +187,18 @@
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
                   <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
-                </div>
+                </div>                
                 <!-- Material input password -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                  <input type="password" name="password" id="materialFormCardPasswordEx" class="form-control" required>
+                  <input type="password" name="password" class="form-control" required>
                 </div>
                 <div class="text-center py-2 mt-1">
                   <button name="daftar" class="btn btn-dark">Daftar</button>
                 </div>
-            </div>
-            </form>
-            <!-- Material form register -->
+              </form>
+              <!-- Material form register -->
 
           </div>
         </div>
