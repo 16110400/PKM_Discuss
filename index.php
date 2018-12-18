@@ -1,5 +1,10 @@
 <!doctype html>
 <html lang="en">
+  <?php
+  include "koneksi.php";
+
+  $query = mysqli_query($koneksi, "select*from video");
+  ?>
 
 <head>
   <!-- Required meta tags -->
@@ -20,9 +25,7 @@
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
     <form class="form-inline">
-      <button class="btn btn-outline-custom m-1" type="button">
-        <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
-      </button>
+        <a class="btn btn-dark" data-toggle="modal" href="#modalMasuk" role="button">login</a>
     </form>
   </nav>
   <!-- End Header -->
@@ -53,96 +56,31 @@
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
+      <?php
+      for ($i = 1; $i <= 4; $i++) {
+        for ($j = 1; $j <= 4; $j++) {
+          while ($all_video = mysqli_fetch_array($query)) {
+            ?>
+      
+      <div class="col-md-3 col-sm-12 mb-2">
+        <div class="card">
+         <video width="253" height="150" controls>
+           <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
+         </video>
+          <div class="card-body">
+            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
+              width="70">
+            <h6 class="card-title">Nama</h6>
+            <p class="card-text">Nama Pengguna</p>
+          </div>
+        </div>
+      </div>
+    <?php
 
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
+  }
+}
+} ?>
+     
     </div>
   </div>
   <!-- End Content -->
@@ -170,14 +108,14 @@
                 <div class="md-form">
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                  <input type="email" id="materialFormCardEmailEx" class="form-control" name="email">
+                  <input type="email" id="materialFormCardEmailEx" class="form-control" name="email" required>
                 </div>
 
                 <!-- Material input password -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                  <input type="password" id="materialFormCardPasswordEx" class="form-control" name="password">
+                  <input type="password" id="materialFormCardPasswordEx" class="form-control" name="password" required>
                 </div>
 
                 <div class="text-center py-4 mt-3">
@@ -223,19 +161,19 @@
                 <div class="md-form">
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
-                  <input type="text" class="form-control" name="nama" id="materialFormCardNamaEx" class="form-control">
+                  <input type="text" class="form-control" name="nama" id="materialFormCardNamaEx" class="form-control" required>
                 </div>
                 <!-- Material input alamat -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="exampleFormControlTextarea1">Alamat</label>
-                  <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" rows="1"></textarea>
+                  <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" rows="1" required></textarea>
                 </div>
                 <!-- Material input telepon -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="materialFormCardPasswordEx" class="font-weight-light">No Handphone</label>
-                  <input type="text" name="no_hp" id="materialFormCardPasswordEx" class="form-control">
+                  <input type="tel" name="no_hp" id="materialFormCardPasswordEx" class="form-control" required>
                 </div>
                 <!-- Material input jenis-kelamin -->
                 <div class="md-form mt-2 mb-2">
@@ -254,7 +192,7 @@
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
                   <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                  <input type="password" name="password" id="materialFormCardPasswordEx" class="form-control">
+                  <input type="password" name="password" id="materialFormCardPasswordEx" class="form-control" required>
                 </div>
                 <div class="text-center py-2 mt-1">
                   <button name="daftar" class="btn btn-dark">Daftar</button>
