@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php"; 
 session_start();
-$query=mysqli_query($koneksi,"select * from video");
+$query=mysqli_query($koneksi,"select * from video ORDER BY id_video DESC");
 ?>
 <!doctype html>
 <html lang="en">
@@ -74,13 +74,13 @@ $query=mysqli_query($koneksi,"select * from video");
             ?>
 
       <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
+        <div class="card" style="height:350px;">
           <video width="253" height="150" controls>
             <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
           </video>
           <div class="card-body">
-            <h6 class="card-title"><?php echo $all_video['deskripsi_video'];?></h6>
-            <p class="card-text">Nama Pengguna</p>
+            <h6 class="card-title">Diunggah oleh : <font color="#02B1A6"><?php echo $all_video['username'];?></font></h6>
+            <p class="card-text">Deskripsi : <font color="#02B1A6"><?php echo $all_video['deskripsi_video'];?></font></p>
           </div>
         </div>
       </div>

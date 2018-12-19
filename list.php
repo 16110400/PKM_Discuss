@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php"; 
 session_start();
-$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image");
+$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image DESC");
 $i= 1;
 
 
@@ -71,9 +71,9 @@ $i= 1;
          <div class="row">
       <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+              
             </div>
           </div>
         </div>
@@ -85,12 +85,11 @@ $i= 1;
         ?>
         <div class="col-md-12 mb-2">
          <div class="card">
-         <?php echo "<img src='image/".$row['nama_image']."' >";?>
+         <?php echo "<img class src='image/".$row['nama_image']. "' height=400 >";?>
           
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-             <h6> <?php echo $row['deskripsi_image']; ?></h6>
-             <p class="card-text">Nama Pengguna</p>
+              <h6>Diunggah oleh : <font color="#02B1A6"><?php echo $row['username']; ?></font></h6>
+             <p class="card-text">Deskripsi : <font color="#02B1A6"><?php echo $row['deskripsi_image']; ?></font></p>
             </div>
           </div>
           </div>
@@ -100,9 +99,9 @@ $i= 1;
 
         <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+              
             </div>
           </div>
         </div>
