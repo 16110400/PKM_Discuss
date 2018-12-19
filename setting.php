@@ -53,6 +53,70 @@
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
+    <div class="container bg-light p-5 rounded shadow-sm">
+        <h1>Settings</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center rounded py-4">
+                    <form>
+                        <img src="images/foto_profil.png" width="220px" class="rounded-circle" alt="avatar">
+                        <div class="form-group">
+                            <label for="ganti_foto">
+                                <img src="images/edit_photo.png" width="150px" class="btn rounded edit" alt="">
+                            </label>
+                            <script>
+                                $("input[type='image']").click(function() {
+                                    $("input[id='my_file']").click();
+                                    });
+                            </script>
+                            <input type="file" hidden class="form-control-file" id="ganti_foto">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <h3>Edit Profil</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nama</label>
+                            <input type="text" class="form-control" id="" placeholder="Username">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Email</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                        <label for="inputAddress2">Alamat</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                        <label for="inputAddress2">No.Telephone</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
 
       
 
