@@ -3,38 +3,49 @@
 error_reporting(1);
 
 require_once "koneksi.php";
- 
-extract($_POST);
- 
-$target_dir = "video/";
-$deskripsi = $_POST['des'];
- 
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
- 
-if($upd)
+session_start();
+
+if(empty($_SESSION['email']))
 {
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
- 
-if($imageFileType != "MP4" && $imageFileType != "mp4" && $imageFileType != "avi" && $imageFileType != "mov" && $imageFileType != "3gp" && $imageFileType != "mpeg")
+    echo "Anda harus login untuk mengupload video";
+}else
 {
-    echo "File Format Not Suppoted";
-} 
- 
-else
-{
- 
-$video_path=$_FILES['fileToUpload']['name'];
- 
-mysqli_query($koneksi,"insert into video(nama_video,deskripsi_video) values('$video_path','$deskripsi')");
- 
-move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
- 
-echo "<script>alert('Berhasil Diunggah')
-window.location='index.php'
-</script>";
- 
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' LIMIT 1");
+    $row = mysqli_fetch_assoc($result); 
+    $nama=$row['nama'];
+    extract($_POST);
+    
+    $target_dir = "video/";
+    $deskripsi = $_POST['des'];
+    
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+    if($upd)
+    {
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    
+    if($imageFileType != "MP4" && $imageFileType != "mp4" && $imageFileType != "avi" && $imageFileType != "mov" && $imageFileType != "3gp" && $imageFileType != "mpeg")
+    {
+        echo "File Format Not Suppoted";
+    } 
+    
+    else
+    {
+        $video_path=$_FILES['fileToUpload']['name'];
+        
+        mysqli_query($koneksi,"insert into video(nama_video,deskripsi_video,username) values('$video_path','$deskripsi','$nama')");
+        
+        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
+        
+        echo "<script>alert('Berhasil Diunggah')
+        window.location='index.php'
+        </script>";
+    
+    }
+    
+    }
+
 }
- 
-}
+  
  
 ?>

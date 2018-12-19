@@ -1,17 +1,10 @@
 <?php
 include "koneksi.php"; 
-
+session_start();
 $query=mysqli_query($koneksi,"select * from video");
 ?>
 <!doctype html>
 <html lang="en">
-
-<?php
-  include "koneksi.php";
-  session_start();
-  $query = mysqli_query($koneksi, "select*from video");
-  ?>
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -31,19 +24,18 @@ $query=mysqli_query($koneksi,"select * from video");
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
     
-    <!-- <li class="form-inline">
-      <a class="btn btn-dark" data-toggle="modal" href="#modalMasuk" role="button">login</a>
-    </li> -->
+    <li class="form-inline">
     <?php
     if(empty($_SESSION['email']))
 {
-    echo '<li><a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a></li>';
+    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
 }else
 {
-    echo '<li><a href="logout.php">Logout</a></li>';
+    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
 }
     
 ?>
+</li>
 
 
   </nav>
