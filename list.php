@@ -1,3 +1,12 @@
+<?php
+include "koneksi.php"; 
+
+$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image");
+$i= 1;
+
+
+?>
+<!do
 <!doctype html>
 <html lang="en">
 
@@ -52,8 +61,7 @@
 
   <!-- Start Content -->
   <div class="container mt-3">
-    <div class="row">
-
+         <div class="row">
       <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
           <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
@@ -62,16 +70,27 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-6 col-sm-12 mb-1">
+        <div class="row">
+        <?php
+    foreach($result as $row){
+        ?>
+        <div class="col-md-12 mb-2">
          <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+         <?php echo "<img src='image/".$row['nama_image']."' >";?>
+          
             <div class="card-body">
               <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-             <h6 class="card-title">Nama</h6>
+             <h6> <?php echo $row['deskripsi_image']; ?></h6>
              <p class="card-text">Nama Pengguna</p>
             </div>
           </div>
+          </div>
+          <?php } ?>
+          </div>
         </div>
+
         <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
           <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
@@ -80,6 +99,9 @@
             </div>
           </div>
         </div>
+
+    </div>
+    
 
     </div>
   </div>

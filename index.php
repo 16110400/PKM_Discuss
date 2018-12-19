@@ -1,5 +1,16 @@
+<?php
+include "koneksi.php"; 
+
+$query=mysqli_query($koneksi,"select * from video");
+?>
 <!doctype html>
 <html lang="en">
+
+<?php
+  include "koneksi.php";
+  session_start();
+  $query = mysqli_query($koneksi, "select*from video");
+  ?>
 
 <head>
   <!-- Required meta tags -->
@@ -19,11 +30,22 @@
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
-    <form class="form-inline">
-      <button class="btn btn-outline-custom m-1" type="button">
-        <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
-      </button>
-    </form>
+    
+    <!-- <li class="form-inline">
+      <a class="btn btn-dark" data-toggle="modal" href="#modalMasuk" role="button">login</a>
+    </li> -->
+    <?php
+    if(empty($_SESSION['email']))
+{
+    echo '<li><a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a></li>';
+}else
+{
+    echo '<li><a href="logout.php">Logout</a></li>';
+}
+    
+?>
+
+
   </nav>
   <!-- End Header -->
 
@@ -53,96 +75,29 @@
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
+      <?php
+      for ($i = 1; $i <= 4; $i++) {
+        for ($j = 1; $j <= 4; $j++) {
+          while ($all_video = mysqli_fetch_array($query)) {
+            ?>
 
       <div class="col-md-3 col-sm-12 mb-2">
         <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <video width="253" height="150" controls>
+            <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
+          </video>
           <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
+            <h6 class="card-title"><?php echo $all_video['deskripsi_video'];?></h6>
             <p class="card-text">Nama Pengguna</p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
+      <?php
 
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70"
-              width="70">
-            <h6 class="card-title">Nama</h6>
-            <p class="card-text">Nama Pengguna</p>
-          </div>
-        </div>
-      </div>
+  }
+}
+} ?>
+
     </div>
   </div>
   <!-- End Content -->
@@ -159,7 +114,8 @@
           <div class="modal-content">
             <div class="modal-body">
 
-              <!-- Material form register -->
+              <!-- Material form login-->
+
               <form action="fungsi/login_user.php" method="POST" ectype="multipart/form-part">
                 <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right"
                     data-dismiss="modal" aria-label="Close">
@@ -168,31 +124,30 @@
 
                 <!-- Material input email -->
                 <div class="md-form">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                    <input type="email" class="form-control" name="email" required>
-                  </div>
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
 
-                  <!-- Material input password -->
-                  <div class="md-form">
-                    <i class="fa fa-lock prefix grey-text"></i>
-                    <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                    <input type="password" class="form-control" name="password" required>
-                  </div>
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" class="form-control" name="password" required>
+                </div>
 
-                  <div class="text-center py-4 mt-3">
-                    <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
-                    <p>
-                      <br />
-                      Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-                  </div>
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
               </form>
               <!-- Material form register -->
 
             </div>
           </div>
           <!-- Card body -->
-
         </div>
       </div>
     </div>
@@ -219,8 +174,8 @@
                     <span aria-hidden="true">×</span>
                   </button></p>
 
-                 <!-- Material input nama lengkap -->
-                 <div class="md-form">
+                <!-- Material input nama lengkap -->
+                <div class="md-form">
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
                   <input type="text" class="form-control" name="nama" class="form-control" required>
@@ -249,7 +204,7 @@
                   <i class="fa fa-envelope prefix grey-text"></i>
                   <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
                   <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
-                </div>                
+                </div>
                 <!-- Material input password -->
                 <div class="md-form">
                   <i class="fa fa-lock prefix grey-text"></i>
@@ -262,13 +217,13 @@
               </form>
               <!-- Material form register -->
 
+            </div>
           </div>
-        </div>
-        <!-- Card body -->
+          <!-- Card body -->
 
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!--End Popup Daftar-->
