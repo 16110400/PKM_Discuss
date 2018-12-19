@@ -1,3 +1,15 @@
+<?php
+require_once "koneksi.php";
+session_start();
+
+if(empty($_SESSION['email']))
+{
+  echo "Anda harus login untuk melihat profil anda.";
+}else{
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' LIMIT 1");
+    $row = mysqli_fetch_assoc($result); 
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -71,7 +83,7 @@
         <div class="container">
           <div class="row my-3">
             <div class="col-6">
-              <h4>Haris Angriawan <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
+              <h4><?php echo $row['nama'];?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
                   alt=""></h4>
               <p>Hey yuk diskusi !</p>
               <a href="#" class="font-weight-light">www.discuss.id</a>
@@ -94,6 +106,9 @@
       <div class="container">
         <div class="row">
           <?php
+          if(isset($_SESSION['email'])){
+            $q = mysqli_query($koneksi, "SELECT * FROM video where username='".$row['username']."'");
+            $row = mysqli_fetch_assoc($q); 
           for ($i = 1; $i <= 4; $i++) {
             for ($j = 1; $j <= 2; $j++) { ?>
           <div class="col-md-6">
@@ -111,7 +126,8 @@
           </div>
           <?php 
         }
-      } ?>
+      }
+     } ?>
         </div>
       </div>
     </section>
