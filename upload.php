@@ -1,5 +1,9 @@
 <?php
+
+include "koneksi.php"; 
+session_start();
 $type = "";
+
 ?>
 
 <!doctype html>
@@ -23,11 +27,18 @@ $type = "";
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss Indonesia</a>
-    <form class="form-inline">
-      <button class="btn btn-outline-custom m-1" type="button">
-        <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
-      </button>
-    </form>
+    <li class="form-inline">
+    <?php
+    if(empty($_SESSION['email']))
+{
+    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+}else
+{
+    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+}
+    
+?>
+</li>
   </nav>
   <!-- End Header -->
 
