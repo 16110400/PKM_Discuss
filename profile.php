@@ -106,8 +106,8 @@ if(empty($_SESSION['email']))
               <p>Hey yuk diskusi !</p>
               <a href="#" class="font-weight-light">YUK DISKUSI</a>
             </div>
-            <div class="col-6 text-right my-auto"><button type="button" class="btn btn-success btn-lg"><img src="images/upload.png"
-                  class=" img-thumbnail rounded-circle" style="width:30px;" alt=""> Upload</button></div>
+            <div class="col-6 text-right my-auto"> <a href="upload.php"><button type="button" class="btn btn-success btn-lg"><img src="images/upload.png"
+                  class=" img-thumbnail rounded-circle" style="width:30px;" alt=""> Upload</button></a></div>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@ if(empty($_SESSION['email']))
               </a>
               <div class="card-body">
                <p style="font-size:14px;">Diunggah oleh : <b><font color="#444"><?php echo $all_video['username'];?></font></b></p>
-               <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
+               <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id_video=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
               </div>
             </div>
           </div>
@@ -179,7 +179,6 @@ if(empty($_SESSION['email']))
     </div>
   </div>
   <!-- End Content -->
-
   <!--Popup Masuk-->
 
   <div class="container my-4">

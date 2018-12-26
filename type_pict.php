@@ -21,7 +21,7 @@
               placeholder="Maksimal 150 karakter"></textarea>
               <p><p>
 
-              <input type="submit" value="Upload Video" name="upd"/>
+              <input type="submit" value="Upload Gambar" name="upd"/>
         </td>
       </tr>
     </table>

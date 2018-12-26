@@ -78,7 +78,7 @@ $query = mysqli_query($koneksi, "select * from video ORDER BY id_video DESC");
           </video>
           <div class="card-body">
             <p style="font-size:14px;">Diunggah oleh : <b><font color="#444"><?php echo $all_video['username'];?></font></b></p>
-            <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
+            <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id_video=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
           </div>
         </div>
       </div>

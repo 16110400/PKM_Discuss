@@ -1,8 +1,8 @@
 <?php
 include "koneksi.php"; 
 session_start();
-$result = mysqli_query($koneksi, "SELECT * FROM video where id_video='".$_GET['id']."'");
-$comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET['id']."'");
+$result = mysqli_query($koneksi, "SELECT * FROM video where id_video='".$_GET['id_video']."'");
+$comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET['id_video']."' ORDER by id_comment DESC");
 ?>
 <!doctype html>
 <html lang="en">
@@ -81,15 +81,15 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
             <p class="card-text"><font color="#02B1A6"><?php echo $record['deskripsi_video'];?></font></p>
           </div>
         </div>
+        <form action="fungsi/comment.php?id_video=<?php echo $_GET['id_video']; ?>" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <p>Comment :</p>
+            <textarea class="col-md-10" name="isi_comment" cols="30" rows="10"></textarea>
+          </div>
+          <button class="btn btn-dark" name="comment">POST</button>
       </div>
+    </form>
     <?php } ?>
-
-    <div class="col-md-12 mt-2 mb-2">
-    <div class="card">
-    <div class="card-body"><b>KOLOM DISKUSI</b>
-    </div>
-    </div>
-    </div>
 
     <?php while ($all_comment = mysqli_fetch_array($comment)) {
             ?>
@@ -97,8 +97,11 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
     <div class="card">
 
     <div class="card-body">
+      
     <?php echo $all_comment['username']; ?>
-    <p><?php echo $all_comment['isi_comment']; ?>
+    <p><?php echo $all_comment['tanggal']; ?></p>
+    <p><?php echo $all_comment['isi_comment']; ?></p>
+    
 
     </div>
     
@@ -267,24 +270,19 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
       };
       reader.readAsDataURL(event.target.files[0]);
     };
-
     $(document).on("change", ".file_multi_video", function (evt) {
       var $source = $('#video_here');
       $source[0].src = URL.createObjectURL(this.files[0]);
       $source.parent()[0].load();
     });
-
     var current = null;
-
     function showresponddiv(messagedivid) {
       var id = messagedivid.replace("message-", "respond-"),
         div = document.getElementById(id);
-
       // hide previous one
       if (current && current != div) {
         current.style.display = 'none';
       }
-
       if (div.style.display == "none") {
         div.style.display = "inline";
         current = div;
@@ -294,5 +292,3 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
     }
   </script>
 </body>
-
-</html>
