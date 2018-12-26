@@ -1,8 +1,15 @@
 <?php
 
-include "koneksi.php"; 
+require_once "koneksi.php";
 session_start();
 
+if(empty($_SESSION['email']))
+{
+    echo "Anda harus login untuk melihat";
+}else
+{
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' limit 1");
+    $row = mysqli_fetch_assoc($result); 
 ?>
 
 <!doctype html>
@@ -85,7 +92,7 @@ session_start();
         <div class="container">
           <div class="row my-3">
             <div class="col-6">
-              <h4>Haris Angriawan <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
+              <h4><?php echo $row['nama']?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
                   alt=""></h4>
               <p>Hey yuk diskusi !</p>
               <a href="#" class="font-weight-light">www.discuss.id</a>
@@ -107,13 +114,14 @@ session_start();
     <section class="gallery-block cards-gallery">
       <div class="container">
         <div class="row">
-          <?php
+        <?php
           for ($i = 1; $i <= 4; $i++) {
-            for ($j = 1; $j <= 2; $j++) { ?>
+            for ($j = 1; $j <= 2; $j++) { 
+              while ($all_video = mysqli_fetch_assoc($result)){ ?>
           <div class="col-md-6">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/" . $row['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $row['nama_video']; ?>" controls></video>
+              <a class="lightbox" target="_blank" href="<?php echo " video/" .$all_video['nama_video']; ?>">
+                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $all_video['nama_video']; ?>" controls></video>
               </a>
               <div class="card-body">
                 <h6><a href="#">Lorem Ipsum</a></h6>
@@ -124,8 +132,10 @@ session_start();
             </div>
           </div>
           <?php 
-        }
-      } ?>
+              }  
+      }
+      } 
+    }?>
         </div>
       </div>
     </section>
