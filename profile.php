@@ -142,7 +142,7 @@ if(empty($_SESSION['email']))
             </div>
           </div>
           <?php 
-              }  
+              } 
       }
       } 
     ?>
