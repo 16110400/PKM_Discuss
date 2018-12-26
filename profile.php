@@ -1,15 +1,22 @@
 <?php
+
 require_once "koneksi.php";
 session_start();
 
 if(empty($_SESSION['email']))
 {
-  echo "Anda harus login untuk melihat profil anda.";
-}else{
-  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' LIMIT 1");
-    $row = mysqli_fetch_assoc($result); 
-}
+    echo "Anda harus login untuk mengupload video";
+}else
+{
+    $content = "SELECT username FROM user WHERE email='".$_SESSION['email']."'";
+    $result = mysqli_query($koneksi, "SELECT * FROM video WHERE username= '$content'");
+    $result = mysqli_query($koneksi, "SELECT username FROM user WHERE email='".$_SESSION['email']."'");
+    $row = mysqli_fetch_assoc($result);
+    
+    
+
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -31,11 +38,18 @@ if(empty($_SESSION['email']))
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
-    <form class="form-inline">
-      <button class="btn btn-outline-custom m-1" type="button">
-        <a class="link" data-toggle="modal" href="#modalMasuk" style="text-decoration:none">login</a>
-      </button>
-    </form>
+    <li class="form-inline">
+    <?php
+    if(empty($_SESSION['email']))
+{
+    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+}else
+{
+    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+}
+    
+?>
+</li>
   </nav>
   <!-- End Header -->
 
@@ -83,7 +97,7 @@ if(empty($_SESSION['email']))
         <div class="container">
           <div class="row my-3">
             <div class="col-6">
-              <h4><?php echo $row['nama'];?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
+              <h4><?php echo $row['username']?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
                   alt=""></h4>
               <p>Hey yuk diskusi !</p>
               <a href="#" class="font-weight-light">www.discuss.id</a>
@@ -105,16 +119,15 @@ if(empty($_SESSION['email']))
     <section class="gallery-block cards-gallery">
       <div class="container">
         <div class="row">
-          <?php
-          if(isset($_SESSION['email'])){
-            $q = mysqli_query($koneksi, "SELECT * FROM video where username='".$row['username']."'");
-            $row = mysqli_fetch_assoc($q); 
+        <?php
           for ($i = 1; $i <= 4; $i++) {
-            for ($j = 1; $j <= 2; $j++) { ?>
+            for ($j = 1; $j <= 2; $j++) {
+              while ($uploadUser = mysqli_fetch_array($result)) {
+                ?>
           <div class="col-md-6">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/" . $row['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $row['nama_video']; ?>" controls></video>
+              <a class="lightbox" target="_blank" href="<?php echo " video/" .$uploadUser['nama_video']; ?>">
+                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $uploadUser['nama_video']; ?>" controls></video>
               </a>
               <div class="card-body">
                 <h6><a href="#">Lorem Ipsum</a></h6>
@@ -124,10 +137,11 @@ if(empty($_SESSION['email']))
               </div>
             </div>
           </div>
-          <?php 
+              <?php
+              }
         }
-      }
-     } ?>
+      } 
+    }?>
         </div>
       </div>
     </section>

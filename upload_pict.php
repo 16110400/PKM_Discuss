@@ -4,7 +4,7 @@ error_reporting(1);
  
 require_once "koneksi.php";
  
-mysql_select_db("discuss",$koneksi);
+mysqli_select_db("discuss",$koneksi);
  
 extract($_POST);
  
