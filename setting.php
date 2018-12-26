@@ -68,6 +68,18 @@ session_start();
   <div class="container mt-3">
     <div class="row">
     <div class="container bg-light p-5 rounded shadow-sm">
+    <?php
+    require_once "koneksi.php";
+    session_start();
+    
+
+    if (empty($_SESSION['email'])) {
+        echo "anda harus login untuk edit";
+    }else {
+        $result = mysqli_query($koneksi,"select * from user where email='".$_SESSION['email']."' limit 1");
+        $row = mysqli_fetch_assoc($result);
+    
+?>
         <h1>Settings</h1>
         <hr>
         <div class="row">
@@ -94,45 +106,42 @@ session_start();
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
                 <h3>Edit Profil</h3>
-                <form>
+                <form action="fungsi/simpan.php" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nama</label>
-                            <input type="text" class="form-control" id="" placeholder="Username">
+                            <input type="text" class="form-control" value="<?php echo $row['nama'];?>" name="nama">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            <input type="password" class="form-control" value="<?php echo $row['password']; ?>" name="password">
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                        </div>
+                    <div class="form-check form-check-inline">
+                        <label for="materialFormCardEmailEx" class="font-weight-light">Jenis Kelamin</label>
+                        <label class="radio-inline ml-3"><input type="radio" name="jk" value="Laki-Laki" checked>Laki-Laki</label>
+                        <label class="radio-inline ml-3"><input type="radio" name="jk" value="Perempuan">Perempuan</label>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Email</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" class="form-control" value="<?php echo $row['email'];?>" name="email">
                         <label for="inputAddress2">Alamat</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" class="form-control" value="<?php echo $row['alamat'];?>" name="alamat">
                         <label for="inputAddress2">No.Telephone</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                        <input type="text" class="form-control" value="<?php echo $row['no_telepon'];?>" name="no_hp">
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    <button type="submit" class="btn btn-dark" name="update">Simpan Perubahan</button>
                 </form>
 
             </div>
         </div>
     </div>
 
-      
+      <?php
+}
+        
+       ?>
 
     </div>
   </div>
