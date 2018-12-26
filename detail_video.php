@@ -287,5 +287,3 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
     }
   </script>
 </body>
-
-</html>
