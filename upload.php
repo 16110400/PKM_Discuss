@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
 $type = "";
 
@@ -29,15 +29,13 @@ $type = "";
     <a class="navbar-brand">Discuss Indonesia</a>
     <li class="form-inline">
     <?php
-    if(empty($_SESSION['email']))
-{
-    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-}else
-{
-    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-}
-    
-?>
+    if (empty($_SESSION['email'])) {
+      echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+    } else {
+      echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+    }
+
+    ?>
 </li>
   </nav>
   <!-- End Header -->
@@ -64,6 +62,11 @@ $type = "";
   </div>
   </div>
   <!-- End Nav -->
+  <?php
+  if (empty($_SESSION['email'])) {
+    require_once('akses404.php');
+  } else {
+    ?>
 
   <!-- Start Content -->
   <div class="container mt-3">
@@ -98,7 +101,7 @@ $type = "";
           case "videos":
             require_once('type_vid.php');
             break;
-          
+
           default:
             require_once($default);
             break;
@@ -110,7 +113,8 @@ $type = "";
     </div>
   </div>
   <!-- End Content -->
-
+    <?php 
+  } ?>
   <!--Popup Masuk-->
 
   <div class="container my-4">

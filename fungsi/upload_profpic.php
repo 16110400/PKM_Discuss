@@ -8,6 +8,7 @@ if (isset($_POST['ubah_foto'])) {
     $tmp = $_FILES['profpic']['tmp_name'];
     $path = "../image/foto_user/" . $foto;
 
+
     if (move_uploaded_file($tmp, $path)) {
         $update = "UPDATE user SET foto_profil= '" . $_FILES['profpic']['name'] . "' WHERE email='" . $_SESSION['email'] . "'";
         $query = mysqli_query($koneksi, $update);

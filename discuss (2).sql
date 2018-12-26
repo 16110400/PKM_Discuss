@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2018 at 04:22 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Waktu pembuatan: 26 Des 2018 pada 10.40
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,42 +25,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Struktur dari tabel `comment`
 --
 
 CREATE TABLE `comment` (
   `id_comment` int(25) NOT NULL,
+  `id_video` int(11) NOT NULL,
   `isi_comment` varchar(50) NOT NULL,
-  `id_user` int(25) NOT NULL
+  `username` varchar(225) NOT NULL,
+  `tanggal` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `comment`
+--
+
+INSERT INTO `comment` (`id_comment`, `id_video`, `isi_comment`, `username`, `tanggal`) VALUES
+(1, 38, 'tidak mendidik sekali', 'xxxx', '0000-00-00 00:00:00'),
+(2, 48, 'hahahaha', 'silah766@gmail.com', '0000-00-00 00:00:00'),
+(12, 47, 'cuk', 'crazymone_atlantica@yahoo.com', '0000-00-00 00:00:00'),
+(13, 47, 'test', 'crazymone_atlantica@yahoo.com', '0000-00-00 00:00:00'),
+(14, 47, 'test 2', 'crazymone_atlantica@yahoo.com', '0000-00-00 00:00:00'),
+(20, 47, 'osas', 'Dikot Syarif', '0000-00-00 00:00:00'),
+(21, 47, 'yeye', 'Dikot Syarif', '0000-00-00 00:00:00'),
+(22, 47, 'sasa', 'Dikot Syarif', '2018-12-26 00:00:00'),
+(23, 47, 'dsfs', 'Dikot Syarif', '2018-12-26 00:00:00'),
+(27, 47, 'jgsajgasjg', 'Dikot Syarif', '2018-12-26 10:16:40'),
+(28, 47, 'sasaas', 'Dikot Syarif', '2018-12-26 10:17:55'),
+(29, 47, 'dsdssd', 'Dikot Syarif', '1970-01-01 01:00:00'),
+(30, 47, 'asasas', 'Dikot Syarif', '2018-12-26 16:27:11');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
---
-
-CREATE TABLE `image` (
-  `id_image` int(5) NOT NULL,
-  `nama_image` varchar(255) NOT NULL,
-  `deskripsi_image` varchar(255) NOT NULL,
-  `username` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `image`
---
-
-INSERT INTO `image` (`id_image`, `nama_image`, `deskripsi_image`, `username`) VALUES
-(7, '9418315_774b894d-0668-4c8d-bf7c-4ab6bbee8c98.jpg', 'test', 'Haris Angriawan'),
-(8, '53297-4k-gaming-wallpaper-3840x2160-for-mobile-hd.jpg', 'assasin', 'Haris Angriawan'),
-(9, '143821-free-4k-gaming-wallpapers-3840x2160.jpg', 'petugas kewalahan memadamkan api yang semakin membesar.', 'Haris Angriawan'),
-(10, 'Shopee_3741d377f1513bf079a5c9f2704250db.jpg', 'jual baju cok', 'Haris Angriawan');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -70,23 +68,24 @@ CREATE TABLE `user` (
   `no_telepon` varchar(100) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `foto_profil` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `alamat`, `no_telepon`, `jenis_kelamin`, `email`, `password`) VALUES
-(1, 'Haris Angriawan', 'Jl. Maguwo', '082384383680', 'Laki-Laki', 'silah766@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(6, 'Dikot Syarif', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(7, 'DIKOT', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(8, 'iluth', 'kemiri', '093248775', 'Laki-Laki', '1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `user` (`id_user`, `nama`, `alamat`, `no_telepon`, `jenis_kelamin`, `email`, `password`, `foto_profil`) VALUES
+(1, 'Haris Angriawan', 'Jl. Maguwo', '082384383680', 'Laki-Laki', 'silah766@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'download.png'),
+(6, 'Dikot Syarif', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055', ''),
+(7, 'DIKOT', 'Jl. Nangka III', '082384383680', 'Perempuan', 'crazymone_atlantica@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055', ''),
+(8, 'iluth', 'kemiri', '093248775', 'Laki-Laki', '1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Struktur dari tabel `video`
 --
 
 CREATE TABLE `video` (
@@ -97,7 +96,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `video`
+-- Dumping data untuk tabel `video`
 --
 
 INSERT INTO `video` (`id_video`, `nama_video`, `deskripsi_video`, `username`) VALUES
@@ -114,54 +113,41 @@ INSERT INTO `video` (`id_video`, `nama_video`, `deskripsi_video`, `username`) VA
 --
 
 --
--- Indexes for table `comment`
+-- Indeks untuk tabel `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`id_comment`),
-  ADD UNIQUE KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id_comment`);
 
 --
--- Indexes for table `image`
---
-ALTER TABLE `image`
-  ADD PRIMARY KEY (`id_image`);
-
---
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `video`
+-- Indeks untuk tabel `video`
 --
 ALTER TABLE `video`
   ADD PRIMARY KEY (`id_video`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT untuk tabel `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(25) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comment` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `image`
---
-ALTER TABLE `image`
-  MODIFY `id_image` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `video`
+-- AUTO_INCREMENT untuk tabel `video`
 --
 ALTER TABLE `video`
   MODIFY `id_video` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;

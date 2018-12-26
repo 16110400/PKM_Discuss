@@ -1,8 +1,8 @@
 <?php
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
 $result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image DESC");
-$i= 1;
+$i = 1;
 
 
 ?>
@@ -30,15 +30,13 @@ $i= 1;
     <a class="navbar-brand">Discuss ID</a>
     <li class="form-inline">
     <?php
-    if(empty($_SESSION['email']))
-{
-    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-}else
-{
-    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-}
-    
-?>
+    if (empty($_SESSION['email'])) {
+      echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+    } else {
+      echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+    }
+
+    ?>
 </li>
   </nav>
   <!-- End Header -->
@@ -81,11 +79,11 @@ $i= 1;
         <div class="col-md-6 col-sm-12 mb-1">
         <div class="row">
         <?php
-    foreach($result as $row){
-        ?>
+        foreach ($result as $row) {
+          ?>
         <div class="col-md-12 mb-2">
          <div class="card">
-         <?php echo "<img class src='image/".$row['nama_image']. "' height=400 >";?>
+         <?php echo "<img class src='image/" . $row['nama_image'] . "' height=400 >"; ?>
           
             <div class="card-body">
               <h6>Diunggah oleh : <font color="#02B1A6"><?php echo $row['username']; ?></font></h6>
@@ -93,7 +91,8 @@ $i= 1;
             </div>
           </div>
           </div>
-          <?php } ?>
+          <?php 
+        } ?>
           </div>
         </div>
 
@@ -168,6 +167,7 @@ $i= 1;
 
   <!--Popup Daftar-->
 
+<div class="container my-4">
   <div class="container my-4">
     <div class="row">
       <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
@@ -235,6 +235,22 @@ $i= 1;
         </div>
       </div>
     </div>
+  </div>
+
+            </div>
+          </div>
+          <!-- Card body -->
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Card body -->
+
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 
   <!--End Popup Daftar-->

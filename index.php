@@ -67,13 +67,13 @@ $query = mysqli_query($koneksi, "select * from video ORDER BY id_video DESC");
     <div class="row">
       <?php
       for ($i = 1; $i <= 4; $i++) {
-        for ($j = 1; $j <= 4; $j++) {
+        for ($j = 1; $j <= 3; $j++) {
           while ($all_video = mysqli_fetch_array($query)) {
             ?>
 
-      <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card" style="height:350px;">
-          <video width="253" height="150" controls>
+      <div class="col-md-4 col-sm-12 mb-2">
+        <div class="card" style="height:450px;">
+          <video width="348" height="300" controls>
             <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
           </video>
           <div class="card-body">

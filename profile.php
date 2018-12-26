@@ -82,7 +82,13 @@ if(empty($_SESSION['email']))
   <!-- jumbotron -->
   <div class="jumbotron jumbotron jb1 shadow">
     <div class="container text-center">
-      <img src="images/foto_profil.png" class="mt-1 rounded-circle" alt="">
+      <?php
+      if ($row['foto_profil'] == "") {
+        echo "<img src='images/foto_profil.png' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
+      } else {
+        echo "<img src='image/foto_user/" . $row['foto_profil'] . "' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
+      }
+      ?>
     </div>
   </div>
   <!-- akhir jumbotron -->
