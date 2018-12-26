@@ -83,9 +83,9 @@ if (empty($_SESSION['email'])) {
     <div class="container text-center">
     <?php
     if ($row['foto_profil'] == "") {
-      echo "<img src='images/foto_profil.png' width='220px' height='220px' class='rounded-circle' alt='avatar'>";
+      echo "<img src='images/foto_profil.png' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
     } else {
-      echo "<img src='image/foto_user/" . $row['foto_profil'] . "' width='220px' height='220px' class='rounded-circle' alt='avatar'>";
+      echo "<img src='image/foto_user/" . $row['foto_profil'] . "' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
     }
     ?>
     </div>
