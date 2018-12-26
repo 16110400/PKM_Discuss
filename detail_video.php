@@ -1,15 +1,11 @@
 <?php
 include "koneksi.php"; 
 session_start();
-$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image DESC");
-$i= 1;
-
-
+$result = mysqli_query($koneksi, "SELECT * FROM video where id_video='".$_GET['id']."'");
+$comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET['id']."'");
 ?>
-<!do
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -28,6 +24,7 @@ $i= 1;
   <!-- Start Header -->
   <nav class="navbar navbar-light" style="background-color: #fff;">
     <a class="navbar-brand">Discuss ID</a>
+    
     <li class="form-inline">
     <?php
     if(empty($_SESSION['email']))
@@ -40,16 +37,18 @@ $i= 1;
     
 ?>
 </li>
+
+
   </nav>
   <!-- End Header -->
 
   <!-- Start Nav -->
   <div class="container-fluid startnav">
     <div class="row">
-      <div class="col navbtn">
+      <div class="col navbtn activenavbtn">
         <a href="index.php" class="navbtnlink"><i class="material-icons material-icons-i">home
           </i></a></div>
-      <div class="col navbtn activenavbtn">
+      <div class="col navbtn">
         <a href="list.php" class="navbtnlink"><i class="material-icons material-icons-i">view_module
           </i></a></div>
       <div class="col navbtn">
@@ -58,7 +57,7 @@ $i= 1;
       <div class="col navbtn">
         <a href="profile.php" class="navbtnlink"><i class="material-icons material-icons-i">account_circle
           </i></a></div>
-      <div class="col navbtn ">
+      <div class="col navbtn">
         <a href="setting.php" class="navbtnlink"><i class="material-icons material-icons-i">build
           </i></a></div>
     </div>
@@ -68,46 +67,39 @@ $i= 1;
 
   <!-- Start Content -->
   <div class="container mt-3">
-         <div class="row">
-      <div class="col-md-3 col-sm-12 mb-1">
-         <div class="card">
-          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
-            <div class="card-body">
-              
-            </div>
+    <div class="row">
+    
+    <?php
+    while($record=mysqli_fetch_array($result)){?>
+      <div class="col-md-12 col-sm-12 mb-2">
+        <div class="card" style="height:500px;">
+          <video width="100%" height="75%" controls>
+            <source src="video/<?php echo $record['nama_video']; ?>" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <p style="font-size:14px;">Diunggah oleh : <b><font color="#444"><?php echo $record['username'];?></font></b></p>
+            <p class="card-text"><font color="#02B1A6"><?php echo $record['deskripsi_video'];?></font></p>
           </div>
         </div>
+      </div>
+    <?php } ?>
 
-        <div class="col-md-6 col-sm-12 mb-1">
-        <div class="row">
-        <?php
-    foreach($result as $row){
-        ?>
-        <div class="col-md-12 mb-2">
-         <div class="card">
-         <?php echo "<img class src='image/".$row['nama_image']. "' height=400 >";?>
-          
-            <div class="card-body">
-              <h6>Diunggah oleh : <font color="#02B1A6"><?php echo $row['username']; ?></font></h6>
-             <p class="card-text">Deskripsi : <font color="#02B1A6"><?php echo $row['deskripsi_image']; ?></font></p>
-            </div>
-          </div>
-          </div>
-          <?php } ?>
-          </div>
-        </div>
+    <?php while ($all_comment = mysqli_fetch_array($comment)) {
+            ?>
+    <div class="col-md-12">
+    <div class="card">
 
-        <div class="col-md-3 col-sm-12 mb-1">
-         <div class="card">
-          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
-            <div class="card-body">
-              
-            </div>
-          </div>
-        </div>
+    <div class="card-body">
+    <?php echo $all_comment['username']; ?>
+    <p><?php echo $all_comment['isi_comment']; ?>
 
     </div>
     
+    </div>
+    </div>
+
+    <?php } ?>
+
 
     </div>
   </div>
@@ -257,6 +249,43 @@ $i= 1;
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+
+  <script>
+    var loadFile = function (event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var output = document.getElementById('respond-1');
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    };
+
+    $(document).on("change", ".file_multi_video", function (evt) {
+      var $source = $('#video_here');
+      $source[0].src = URL.createObjectURL(this.files[0]);
+      $source.parent()[0].load();
+    });
+
+    var current = null;
+
+    function showresponddiv(messagedivid) {
+      var id = messagedivid.replace("message-", "respond-"),
+        div = document.getElementById(id);
+
+      // hide previous one
+      if (current && current != div) {
+        current.style.display = 'none';
+      }
+
+      if (div.style.display == "none") {
+        div.style.display = "inline";
+        current = div;
+      } else {
+        div.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>
