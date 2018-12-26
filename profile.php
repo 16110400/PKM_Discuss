@@ -2,13 +2,7 @@
 
 require_once "koneksi.php";
 session_start();
-
-if (empty($_SESSION['email'])) {
-  echo "Anda harus login untuk melihat";
-} else {
-  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='" . $_SESSION['email'] . "' limit 1");
-  $row = mysqli_fetch_assoc($result);
-  ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -153,11 +147,7 @@ if (empty($_SESSION['email'])) {
     </div>
   </div>
   <!-- End Content -->
-  <?php
-
-}
-
-?>
+ 
   <!--Popup Masuk-->
 
   <div class="container my-4">
