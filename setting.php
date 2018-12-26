@@ -67,7 +67,14 @@ session_start();
     <div class="row">
     <div class="container bg-light p-5 rounded shadow-sm">
     <?php
+<<<<<<< HEAD
     
+=======
+
+    require_once "koneksi.php";
+    // session_start();
+
+>>>>>>> 5d385af7c9cd865dbd7ad01e5f0267f939a9b434
     if (empty($_SESSION['email'])) {
         echo "anda harus login untuk edit";
     } else {
