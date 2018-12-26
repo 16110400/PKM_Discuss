@@ -84,6 +84,13 @@ $comment = mysqli_query($koneksi, "SELECT * FROM comment where id_video='".$_GET
       </div>
     <?php } ?>
 
+    <div class="col-md-12 mt-2 mb-2">
+    <div class="card">
+    <div class="card-body"><b>KOLOM DISKUSI</b>
+    </div>
+    </div>
+    </div>
+
     <?php while ($all_comment = mysqli_fetch_array($comment)) {
             ?>
     <div class="col-md-12">
