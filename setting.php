@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
 
 ?>
@@ -28,15 +28,13 @@ session_start();
     <a class="navbar-brand">Discuss ID</a>
     <li class="form-inline">
     <?php
-    if(empty($_SESSION['email']))
-{
-    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-}else
-{
-    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-}
-    
-?>
+    if (empty($_SESSION['email'])) {
+        echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+    } else {
+        echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+    }
+
+    ?>
 </li>
   </nav>
   <!-- End Header -->
@@ -70,39 +68,40 @@ session_start();
     <div class="container bg-light p-5 rounded shadow-sm">
     <?php
     require_once "koneksi.php";
-    session_start();
-    
+    // session_start();
+
 
     if (empty($_SESSION['email'])) {
         echo "anda harus login untuk edit";
-    }else {
-        $result = mysqli_query($koneksi,"select * from user where email='".$_SESSION['email']."' limit 1");
+    } else {
+        $result = mysqli_query($koneksi, "select * from user where email='" . $_SESSION['email'] . "' limit 1");
         $row = mysqli_fetch_assoc($result);
-    
-?>
+        ?>
         <h1>Settings</h1>
         <hr>
         <div class="row">
             <!-- left column -->
             <div class="col-md-3">
                 <div class="text-center rounded py-4">
-                    <form>
-                        <img src="images/foto_profil.png" width="220px" class="rounded-circle" alt="avatar">
+                    <form action="fungsi/upload_profpic.php" method="POST" enctype="multipart/form-data">
+                        <?php
+                        if ($row['foto_profil'] == "") {
+                            echo "<img src='images/foto_profil.png' width='220px' height='220px' class='rounded-circle' alt='avatar'>";
+                        } else {
+                            echo "<img src='image/foto_user/" . $row['foto_profil'] . "' width='220px' height='220px' class='rounded-circle' alt='avatar'>";
+                        }
+                        ?>
                         <div class="form-group">
                             <label for="ganti_foto">
                                 <img src="images/edit_photo.png" width="150px" class="btn rounded edit" alt="">
                             </label>
-                            <script>
-                                $("input[type='image']").click(function() {
-                                    $("input[id='my_file']").click();
-                                    });
-                            </script>
-                            <input type="file" hidden class="form-control-file" id="ganti_foto">
+                            <input type="file" hidden class="form-control-file" id="ganti_foto" name="profpic">
+                            <input type="submit" class=" btn btn-dark" name="ubah_foto" value="Ubah Foto" >
                         </div>
                     </form>
                 </div>
             </div>
-
+                                
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
                 <h3>Edit Profil</h3>
@@ -110,7 +109,7 @@ session_start();
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nama</label>
-                            <input type="text" class="form-control" value="<?php echo $row['nama'];?>" name="nama">
+                            <input type="text" class="form-control" value="<?php echo $row['nama']; ?>" name="nama">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
@@ -125,11 +124,11 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Email</label>
-                        <input type="text" class="form-control" value="<?php echo $row['email'];?>" name="email">
+                        <input type="text" class="form-control" value="<?php echo $row['email']; ?>" name="email">
                         <label for="inputAddress2">Alamat</label>
-                        <input type="text" class="form-control" value="<?php echo $row['alamat'];?>" name="alamat">
+                        <input type="text" class="form-control" value="<?php echo $row['alamat']; ?>" name="alamat">
                         <label for="inputAddress2">No.Telephone</label>
-                        <input type="text" class="form-control" value="<?php echo $row['no_telepon'];?>" name="no_hp">
+                        <input type="text" class="form-control" value="<?php echo $row['no_telepon']; ?>" name="no_hp">
                     </div>
                     <button type="submit" class="btn btn-dark" name="update">Simpan Perubahan</button>
                 </form>
@@ -139,9 +138,10 @@ session_start();
     </div>
 
       <?php
-}
-        
-       ?>
+
+    }
+
+    ?>
 
     </div>
   </div>
