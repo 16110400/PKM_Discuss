@@ -1,9 +1,14 @@
 <?php
 
-include "koneksi.php";
+require_once "koneksi.php";
 session_start();
 
-?>
+if (empty($_SESSION['email'])) {
+  echo "Anda harus login untuk melihat";
+} else {
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='" . $_SESSION['email'] . "' limit 1");
+  $row = mysqli_fetch_assoc($result);
+  ?>
 
 <!doctype html>
 <html lang="en">
@@ -95,7 +100,7 @@ if (empty($_SESSION['email'])) {
         <div class="container">
           <div class="row my-3">
             <div class="col-6">
-              <h4>Haris Angriawan <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
+              <h4><?php echo $row['nama'] ?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
                   alt=""></h4>
               <p>Hey yuk diskusi !</p>
               <a href="#" class="font-weight-light">www.discuss.id</a>
@@ -117,13 +122,14 @@ if (empty($_SESSION['email'])) {
     <section class="gallery-block cards-gallery">
       <div class="container">
         <div class="row">
-          <?php
-          for ($i = 1; $i <= 4; $i++) {
-            for ($j = 1; $j <= 2; $j++) { ?>
+        <?php
+        for ($i = 1; $i <= 4; $i++) {
+          for ($j = 1; $j <= 2; $j++) {
+            while ($all_video = mysqli_fetch_assoc($result)) { ?>
           <div class="col-md-6">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/" . $row['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $row['nama_video']; ?>" controls></video>
+              <a class="lightbox" target="_blank" href="<?php echo " video/" . $all_video['nama_video']; ?>">
+                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $all_video['nama_video']; ?>" controls></video>
               </a>
               <div class="card-body">
                 <h6><a href="#">Lorem Ipsum</a></h6>
@@ -135,7 +141,9 @@ if (empty($_SESSION['email'])) {
           </div>
           <?php 
         }
-      } ?>
+      }
+    }
+  } ?>
         </div>
       </div>
     </section>
@@ -152,58 +160,60 @@ if (empty($_SESSION['email'])) {
 ?>
   <!--Popup Masuk-->
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form login-->
+
+              <form action="fungsi/login_user.php" method="POST" ectype="multipart/form-part">
+                <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
+                  </button></p>
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">   
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" class="form-control" name="password" required>
+                </div>
+
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
+              </form>
+              <!-- Material form register -->
+
             </div>
-
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">    
-            </div>
-
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Masuk</button></a>
-                <p>
-                  Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+          </div>
+          <!-- Card body -->
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- Card body -->
+  </div>
 
-</div>
-</div>
-</div>
-</div>
+  <!--End Popup Masuk-->
 
-<!--End Popup Masuk-->
+  <!--Popup Daftar-->
 
-<!--Popup Daftar-->
-
-<div class="container my-4">
+  <div class="container my-4">
     <div class="row">
       <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
         <!-- Card -->
@@ -272,7 +282,7 @@ if (empty($_SESSION['email'])) {
     </div>
   </div>
 
-<!--End Popup Daftar-->
+  <!--End Popup Daftar-->
 
 
 

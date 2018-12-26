@@ -117,58 +117,60 @@ $type = "";
   } ?>
   <!--Popup Masuk-->
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form login-->
+
+              <form action="fungsi/login_user.php" method="POST" ectype="multipart/form-part">
+                <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
+                  </button></p>
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">   
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" class="form-control" name="password" required>
+                </div>
+
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
+              </form>
+              <!-- Material form register -->
+
             </div>
-
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">    
-            </div>
-
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Masuk</button></a>
-                <p>
-                  Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+          </div>
+          <!-- Card body -->
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- Card body -->
+  </div>
 
-</div>
-</div>
-</div>
-</div>
+  <!--End Popup Masuk-->
 
-<!--End Popup Masuk-->
+  <!--Popup Daftar-->
 
-<!--Popup Daftar-->
-
-<div class="container my-4">
+  <div class="container my-4">
     <div class="row">
       <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
         <!-- Card -->
@@ -237,7 +239,7 @@ $type = "";
     </div>
   </div>
 
-<!--End Popup Daftar-->
+  <!--End Popup Daftar-->
 
 
 
