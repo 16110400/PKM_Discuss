@@ -1,12 +1,19 @@
 <?php
  
 error_reporting(1);
- 
+
 require_once "koneksi.php";
- 
-mysqli_select_db("discuss",$koneksi);
- 
-extract($_POST);
+session_start();
+
+if(empty($_SESSION['email']))
+{
+    echo "Anda harus login untuk mengupload gambar";
+}else
+{
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' LIMIT 1");
+    $row = mysqli_fetch_assoc($result); 
+    $nama=$row['nama'];
+    extract($_POST);
  
 $target_dir = "image/";
 $deskripsi = $_POST['des'];
@@ -21,22 +28,24 @@ if($imageFileType != "JPEG" && $imageFileType != "JPG" && $imageFileType != "GIF
 {
     echo "File Format Not Suppoted";
 } 
+    
+    else
+    {
+       $image_path=$_FILES['fileToUpload']['name'];
  
-else
-{
+       mysqli_query($koneksi,"insert into image(nama_image,deskripsi_image,username) values('$image_path','$deskripsi','$nama')");
  
-$image_path=$_FILES['fileToUpload']['name'];
- 
-mysqli_query($koneksi,"insert into image(nama_image,deskripsi_image) values('$image_path','$deskripsi')");
- 
-move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
+       move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
  
 echo "<script>alert('Berhasil Diunggah')
-window.location='index.php'
+window.location='list.php'
 </script>";
- 
+    
+    }
+    
+    }
+
 }
- 
-}
+  
  
 ?>

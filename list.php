@@ -1,8 +1,8 @@
 <?php
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
-$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image");
-$i= 1;
+$result = mysqli_query($koneksi, "SELECT * FROM image ORDER BY id_image DESC");
+$i = 1;
 
 
 ?>
@@ -30,15 +30,13 @@ $i= 1;
     <a class="navbar-brand">Discuss ID</a>
     <li class="form-inline">
     <?php
-    if(empty($_SESSION['email']))
-{
-    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-}else
-{
-    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-}
-    
-?>
+    if (empty($_SESSION['email'])) {
+      echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+    } else {
+      echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+    }
+
+    ?>
 </li>
   </nav>
   <!-- End Header -->
@@ -71,9 +69,9 @@ $i= 1;
          <div class="row">
       <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+              
             </div>
           </div>
         </div>
@@ -81,28 +79,28 @@ $i= 1;
         <div class="col-md-6 col-sm-12 mb-1">
         <div class="row">
         <?php
-    foreach($result as $row){
-        ?>
+        foreach ($result as $row) {
+          ?>
         <div class="col-md-12 mb-2">
          <div class="card">
-         <?php echo "<img src='image/".$row['nama_image']."' >";?>
+         <?php echo "<img class src='image/" . $row['nama_image'] . "' height=400 >"; ?>
           
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
-             <h6> <?php echo $row['deskripsi_image']; ?></h6>
-             <p class="card-text">Nama Pengguna</p>
+              <h6>Diunggah oleh : <font color="#02B1A6"><?php echo $row['username']; ?></font></h6>
+             <p class="card-text">Deskripsi : <font color="#02B1A6"><?php echo $row['deskripsi_image']; ?></font></p>
             </div>
           </div>
           </div>
-          <?php } ?>
+          <?php 
+        } ?>
           </div>
         </div>
 
         <div class="col-md-3 col-sm-12 mb-1">
          <div class="card">
-          <img class="card-img-top" src="https://cdn-images-1.medium.com/max/823/1*bqt8t5vPveFWPWc_1FZaRA.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="https://2.bp.blogspot.com/-MOB4AyP4udE/WpzlEypKS2I/AAAAAAAAMeE/KgHNrb56nSIgUdlKw5qDxV7r6PQ3jZIcwCLcBGAs/s1600/160x600.gif" alt="Card image cap">
             <div class="card-body">
-              <img class="imgthumb" src="https://bashooka.com/wp-content/uploads/2013/10/flat-logo-designs-14.jpg" height="70" width="70">
+              
             </div>
           </div>
         </div>
@@ -116,117 +114,200 @@ $i= 1;
 
   <!--Popup Masuk-->
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalMasuk">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form login-->
+
+              <form action="fungsi/login_user.php" method="POST" ectype="multipart/form-part">
+                <p class="h4 text-left py-4">Masuk <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
+                  </button></p>
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">   
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" class="form-control" name="password" required>
+                </div>
+
+                <div class="text-center py-4 mt-3">
+                  <button class="btn btn-dark"><a class="text-white" name="">Login</a></button>
+                  <p>
+                    <br />
+                    Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
+                </div>
+              </form>
+              <!-- Material form register -->
+
             </div>
-
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">    
-            </div>
-
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Masuk</button></a>
-                <p>
-                  Belum punya akun <a class="link closemdLogin" data-toggle="modal" data-dismiss="modal" href="#modalDaftar">Daftar</a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+          </div>
+          <!-- Card body -->
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- Card body -->
+  </div>
 
-</div>
-</div>
-</div>
-</div>
+  <!--End Popup Masuk-->
 
-<!--End Popup Masuk-->
-
-<!--Popup Daftar-->
+  <!--Popup Daftar-->
 
 <div class="container my-4">
-  <div class="row">
-    <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4 p-2 m-auto mt-3 align-self-center modal" id="modalDaftar">
         <!-- Card -->
-<div class="modal-dialog modal-background">
+        <div class="modal-dialog modal-background">
 
-    <!-- Card body -->
-    <div class="modal-content">
-      <div class="modal-body">
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
 
-        <!-- Material form register -->
-        <form>
-            <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right" data-dismiss="modal" aria-label="Close">
+              <!-- Material form register -->
+              <form action="fungsi/register.php" method="POST" enctype="multipart/form-form">
+                <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button></p>
-            
-            <!-- Material input nama lengkap -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
-                <input type="email" id="materialFormCardNamaEx" class="form-control">
-            </div>
+                  </button></p>
 
-            <!-- Material input username -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Username</label>
-                <input type="email" id="materialFormCardUsenameEx" class="form-control">
-            </div>
+                <!-- Material input nama lengkap -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
+                  <input type="text" class="form-control" name="nama" class="form-control" required>
+                </div>
+                <!-- Material input alamat -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="exampleFormControlTextarea1">Alamat</label>
+                  <textarea class="form-control" name="alamat" rows="1" required></textarea>
+                </div>
+                <!-- Material input telepon -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">No Handphone</label>
+                  <input type="text" name="no_hp" class="form-control" required>
+                </div>
+                <!-- Material input jenis-kelamin -->
+                <div class="md-form mt-2 mb-2">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Jenis Kelamin</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Laki-Laki" checked>Laki-Laki</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Perempuan">Perempuan</label>
+                </div>
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
+                </div>
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="text-center py-2 mt-1">
+                  <button name="daftar" class="btn btn-dark">Daftar</button>
+                </div>
+              </form>
+              <!-- Material form register -->
 
-            <!-- Material input email -->
-            <div class="md-form">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
-                <input type="email" id="materialFormCardEmailEx" class="form-control">
             </div>
+          </div>
+          <!-- Card body -->
 
-            <!-- Material input password -->
-            <div class="md-form">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
-                <input type="password" id="materialFormCardPasswordEx" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+
+          <!-- Card body -->
+          <div class="modal-content">
+            <div class="modal-body">
+
+              <!-- Material form register -->
+              <form action="fungsi/register.php" method="POST" enctype="multipart/form-form">
+                <p class="h4 text-left py-4">Daftar <button type="button" class="close waves-effect waves-light text-right"
+                    data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button></p>
+
+                <!-- Material input nama lengkap -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Nama Lengkap</label>
+                  <input type="text" class="form-control" name="nama" class="form-control" required>
+                </div>
+                <!-- Material input alamat -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="exampleFormControlTextarea1">Alamat</label>
+                  <textarea class="form-control" name="alamat" rows="1" required></textarea>
+                </div>
+                <!-- Material input telepon -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">No Handphone</label>
+                  <input type="text" name="no_hp" class="form-control" required>
+                </div>
+                <!-- Material input jenis-kelamin -->
+                <div class="md-form mt-2 mb-2">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Jenis Kelamin</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Laki-Laki" checked>Laki-Laki</label>
+                  <label class="radio-inline ml-3"><input type="radio" name="jk" value="Perempuan">Perempuan</label>
+                </div>
+                <!-- Material input email -->
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <label for="materialFormCardEmailEx" class="font-weight-light">Email</label>
+                  <input type="email" name="email" id="materialFormCardUsenameEx" class="form-control" required>
+                </div>
+                <!-- Material input password -->
+                <div class="md-form">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <label for="materialFormCardPasswordEx" class="font-weight-light">Kata Sandi</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="text-center py-2 mt-1">
+                  <button name="daftar" class="btn btn-dark">Daftar</button>
+                </div>
+              </form>
+              <!-- Material form register -->
+
             </div>
+          </div>
+          <!-- Card body -->
 
-            <div class="text-center py-4 mt-3">
-                <a href=""><button class="btn-primary">Daftar</button></a>
-            </div>
-        </form>
-        <!-- Material form register -->
-
+        </div>
+      </div>
     </div>
     </div>
     <!-- Card body -->
 
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
+  </div>
 
-<!--End Popup Daftar-->
+  <!--End Popup Daftar-->
 
 
 

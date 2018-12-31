@@ -1,7 +1,7 @@
 <?php
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
-$query=mysqli_query($koneksi,"select * from video");
+$query = mysqli_query($koneksi, "select * from video ORDER BY id_video DESC");
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,15 +26,13 @@ $query=mysqli_query($koneksi,"select * from video");
     
     <li class="form-inline">
     <?php
-    if(empty($_SESSION['email']))
-{
-    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-}else
-{
-    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-}
-    
-?>
+    if (empty($_SESSION['email'])) {
+      echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+    } else {
+      echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+    }
+
+    ?>
 </li>
 
 
@@ -74,20 +72,20 @@ $query=mysqli_query($koneksi,"select * from video");
             ?>
 
       <div class="col-md-3 col-sm-12 mb-2">
-        <div class="card">
+        <div class="card" style="height:350px;">
           <video width="253" height="150" controls>
             <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
           </video>
           <div class="card-body">
-            <h6 class="card-title"><?php echo $all_video['deskripsi_video'];?></h6>
-            <p class="card-text">Nama Pengguna</p>
+            <p style="font-size:14px;">Diunggah oleh : <b><font color="#444"><?php echo $all_video['username'];?></font></b></p>
+            <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
           </div>
         </div>
       </div>
       <?php
 
+    }
   }
-}
 } ?>
 
     </div>
