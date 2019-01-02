@@ -1,27 +1,16 @@
 <?php
-
 require_once "koneksi.php";
 session_start();
-
 if(empty($_SESSION['email']))
 {
-    echo "Anda harus login untuk mengupload video";
+    echo "Anda harus login untuk melihat";
 }else
 {
-    $content = "SELECT username FROM user WHERE email='".$_SESSION['email']."'";
-    $result = mysqli_query($koneksi, "SELECT * FROM video WHERE username= '$content'");
-    $result = mysqli_query($koneksi, "SELECT username FROM user WHERE email='".$_SESSION['email']."'");
-    $row = mysqli_fetch_assoc($result);
-    
-    
-
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='".$_SESSION['email']."' limit 1");
+    $row = mysqli_fetch_assoc($result); 
+    $video = mysqli_query($koneksi,"SELECT * FROM video WHERE username='".$row['nama']."'");
+    $foto = mysqli_query($koneksi,"SELECT * FROM image WHERE username='".$row['nama']."'");
 ?>
-if (empty($_SESSION['email'])) {
-  echo "Anda harus login untuk melihat";
-} else {
-  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email='" . $_SESSION['email'] . "' limit 1");
-  $row = mysqli_fetch_assoc($result);
-  ?>
 
 <!doctype html>
 <html lang="en">
@@ -46,13 +35,15 @@ if (empty($_SESSION['email'])) {
     <a class="navbar-brand">Discuss ID</a>
     <li class="form-inline">
     <?php
-    if (empty($_SESSION['email'])) {
-      echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
-    } else {
-      echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
-    }
-
-    ?>
+    if(empty($_SESSION['email']))
+{
+    echo '<a class="btn btn-dark" data-toggle="modal" href="#modalMasuk">LOGIN</a>';
+}else
+{
+    echo '<a class="btn btn-dark" href="logout.php">Logout</a>';
+}
+    
+?>
 </li>
   </nav>
   <!-- End Header -->
@@ -79,28 +70,22 @@ if (empty($_SESSION['email'])) {
   </div>
   </div>
   <!-- End Nav -->
-<!-- Koneksi SQL -->
-<?php
-if (empty($_SESSION['email'])) {
-  require_once('akses404.php');
-} else {
-  $result = mysqli_query($koneksi, "select * from user where email='" . $_SESSION['email'] . "' limit 1");
-  $row = mysqli_fetch_assoc($result);
-  ?>
+
   <!-- Start Content -->
   <div class="container mt-3">
     <div class="row">
+
       <div class="col-md-12">
   <!-- jumbotron -->
   <div class="jumbotron jumbotron jb1 shadow">
     <div class="container text-center">
-    <?php
-    if ($row['foto_profil'] == "") {
-      echo "<img src='images/foto_profil.png' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
-    } else {
-      echo "<img src='image/foto_user/" . $row['foto_profil'] . "' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
-    }
-    ?>
+      <?php
+      if ($row['foto_profil'] == "") {
+        echo "<img src='images/foto_profil.png' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
+      } else {
+        echo "<img src='image/foto_user/" . $row['foto_profil'] . "' class='mt-1 rounded-circle img-thumbnail' alt='' width='220px' height='220px'>";
+      }
+      ?>
     </div>
   </div>
   <!-- akhir jumbotron -->
@@ -113,13 +98,13 @@ if (empty($_SESSION['email'])) {
         <div class="container">
           <div class="row my-3">
             <div class="col-6">
-              <h4><?php echo $row['nama'] ?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
+              <h4><?php echo $row['username']?> <img src="images/cek.jpg" class="rounded-circle " style="width:15px; height:auto;"
                   alt=""></h4>
               <p>Hey yuk diskusi !</p>
-              <a href="#" class="font-weight-light">www.discuss.id</a>
+              <a href="#" class="font-weight-light">YUK DISKUSI</a>
             </div>
-            <div class="col-6 text-right my-auto"><button type="button" class="btn btn-success btn-lg"><img src="images/upload.png"
-                  class=" img-thumbnail rounded-circle" style="width:30px;" alt=""> Upload</button></div>
+            <div class="col-6 text-right my-auto"> <a href="upload.php"><button type="button" class="btn btn-success btn-lg"><img src="images/upload.png"
+                  class=" img-thumbnail rounded-circle" style="width:30px;" alt=""> Upload</button></a></div>
           </div>
         </div>
       </div>
@@ -135,45 +120,53 @@ if (empty($_SESSION['email'])) {
     <section class="gallery-block cards-gallery">
       <div class="container">
         <div class="row">
+        <div class="col-md-12 mb-2 mt-2"><h1><center>VIDEO</center></h1></div>
         <?php
-<<<<<<< HEAD
           for ($i = 1; $i <= 4; $i++) {
-            for ($j = 1; $j <= 2; $j++) {
-              while ($uploadUser = mysqli_fetch_array($result)) {
-                ?>
-          <div class="col-md-6">
-            <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/" .$uploadUser['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $uploadUser['nama_video']; ?>" controls></video>
-=======
-        for ($i = 1; $i <= 4; $i++) {
-          for ($j = 1; $j <= 2; $j++) {
-            while ($all_video = mysqli_fetch_assoc($result)) { ?>
-          <div class="col-md-6">
-            <div class="card border-0 transform-on-hover">
-              <a class="lightbox" target="_blank" href="<?php echo " video/" . $all_video['nama_video']; ?>">
-                <video class="col-lg-12 pt-2" src="<?php echo " video/" . $all_video['nama_video']; ?>" controls></video>
->>>>>>> 83683811b6b92dd2f5b1e2bb6840897487e98c9f
+            for ($j = 1; $j <= 3; $j++) { 
+              while ($all_video = mysqli_fetch_array($video)){ ?>
+          <div class="col-md-4 col-sm-12">
+            <div class="card border-0 transform-on-hover" style="height:350px;">
+              <a class="lightbox" target="_blank" href="<?php echo " video/" .$all_video['nama_video']; ?>">
+              <video width="100%" height="200" controls>
+            <source src="video/<?php echo $all_video['nama_video']; ?>" type="video/mp4">
+          </video>
               </a>
               <div class="card-body">
-                <h6><a href="#">Lorem Ipsum</a></h6>
-                <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
-                  urna.</p>
-                <a href=""><input type="submit" value="view"></a>
+               <p style="font-size:14px;">Diunggah oleh : <b><font color="#444"><?php echo $all_video['username'];?></font></b></p>
+               <p class="card-text"><font color="#02B1A6"><a href="detail_video.php?id_video=<?php echo $all_video['id_video'];?>"><?php echo $all_video['deskripsi_video'];?></a></font></p>
               </div>
             </div>
           </div>
-              <?php
-              }
-        }
-<<<<<<< HEAD
+          <?php 
+              } 
+      }
+      } 
+    ?>
+    
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-2 mt-2"><h1><center>FOTO</center></h1></div>
+        <?php
+          
+          for ($i = 1; $i <= 4; $i++) {
+            for ($j = 1; $j <= 3; $j++) { 
+              while ($all_pict = mysqli_fetch_array($foto)){ ?>
+          <div class="col-md-4 col-sm-12">
+            <div class="card border-0 transform-on-hover" style="height:400px;">
+              <a class="lightbox" target="_blank" href="<?php echo " image/" .$all_pict['nama_image']; ?>">
+                <img height="250" width="150" class="col-lg-12 pt-2" src="<?php echo " image/" . $all_pict['nama_image']; ?>" controls>
+              </a>
+              <div class="card-body">
+               <p class="card-text"><font color="#02B1A6"><a href="detail_image.php?id=<?php echo $all_pict['id_image'];?>"><?php echo $all_pict['deskripsi_image'];?></a></font></p>
+              </div>
+            </div>
+          </div>
+          <?php 
+              }  
+      }
       } 
     }?>
-=======
-      }
-    }
-  } ?>
->>>>>>> 83683811b6b92dd2f5b1e2bb6840897487e98c9f
         </div>
       </div>
     </section>
@@ -183,11 +176,6 @@ if (empty($_SESSION['email'])) {
     </div>
   </div>
   <!-- End Content -->
-  <?php
-
-}
-
-?>
   <!--Popup Masuk-->
 
   <div class="container my-4">

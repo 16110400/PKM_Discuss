@@ -109,7 +109,7 @@ session_start();
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nama</label>
-                            <input type="text" class="form-control" value="<?php echo $row['nama']; ?>" name="nama">
+                            <input type="text" class="form-control" value="<?php echo $row['username']; ?>" name="nama">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
